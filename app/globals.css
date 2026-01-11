@@ -3,98 +3,104 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Modern aesthetic color palette for interior design studio */
+/* Royal vintage car color palette - #8B4513 Primary, #D4AF37 Secondary, #2C1810 Button, #171717 Font */
 :root {
-  /* Clean white backgrounds */
-  --background: oklch(0.99 0.002 0);
-  --foreground: oklch(0.2 0.02 35);
+  /* Clean cream backgrounds for vintage feel */
+  --background: #FFFBF5;
+  --foreground: #171717;
 
   /* Card colors */
-  --card: oklch(0.98 0.003 0);
-  --card-foreground: oklch(0.2 0.02 35);
+  --card: #FFF8F0;
+  --card-foreground: #171717;
 
   /* Popover */
-  --popover: oklch(0.98 0.003 0);
-  --popover-foreground: oklch(0.2 0.02 35);
+  --popover: #FFF8F0;
+  --popover-foreground: #171717;
 
-  /* Primary - Modern Teal/Cyan */
-  --primary: oklch(0.5 0.15 200);
-  --primary-foreground: oklch(0.99 0.002 0);
+  /* Primary - Royal Saddle Brown #8B4513 */
+  --primary: #8B4513;
+  --primary-foreground: #FFFBF5;
 
-  /* Secondary - Soft Slate */
-  --secondary: oklch(0.65 0.05 200);
-  --secondary-foreground: oklch(0.99 0.002 0);
+  /* Secondary - Royal Gold #D4AF37 */
+  --secondary: #D4AF37;
+  --secondary-foreground: #171717;
 
   /* Muted tones */
-  --muted: oklch(0.92 0.005 0);
-  --muted-foreground: oklch(0.5 0.02 35);
+  --muted: #F5EDE4;
+  --muted-foreground: #5C4033;
 
-  /* Accent - Warm Peach */
-  --accent: oklch(0.75 0.12 50);
-  --accent-foreground: oklch(0.2 0.02 35);
+  /* Accent - Royal Gold */
+  --accent: #D4AF37;
+  --accent-foreground: #171717;
 
   /* Destructive */
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.99 0.002 0);
+  --destructive: #B91C1C;
+  --destructive-foreground: #FFFBF5;
 
   /* Borders and inputs */
-  --border: oklch(0.92 0.005 0);
-  --input: oklch(0.92 0.005 0);
-  --ring: oklch(0.5 0.15 200);
+  --border: #E8DFD5;
+  --input: #E8DFD5;
+  --ring: #8B4513;
+
+  /* Button color - Dark Brown #2C1810 */
+  --button: #2C1810;
+  --button-foreground: #FFFBF5;
 
   /* Charts */
-  --chart-1: oklch(0.5 0.15 200);
-  --chart-2: oklch(0.75 0.12 50);
-  --chart-3: oklch(0.65 0.05 200);
-  --chart-4: oklch(0.7 0.08 150);
-  --chart-5: oklch(0.72 0.1 40);
+  --chart-1: #8B4513;
+  --chart-2: #D4AF37;
+  --chart-3: #2C1810;
+  --chart-4: #A0522D;
+  --chart-5: #DAA520;
 
   --radius: 0.5rem;
 
   /* Sidebar */
-  --sidebar: oklch(0.98 0.003 0);
-  --sidebar-foreground: oklch(0.2 0.02 35);
-  --sidebar-primary: oklch(0.5 0.15 200);
-  --sidebar-primary-foreground: oklch(0.99 0.002 0);
-  --sidebar-accent: oklch(0.92 0.005 0);
-  --sidebar-accent-foreground: oklch(0.2 0.02 35);
-  --sidebar-border: oklch(0.92 0.005 0);
-  --sidebar-ring: oklch(0.5 0.15 200);
+  --sidebar: #FFF8F0;
+  --sidebar-foreground: #171717;
+  --sidebar-primary: #8B4513;
+  --sidebar-primary-foreground: #FFFBF5;
+  --sidebar-accent: #F5EDE4;
+  --sidebar-accent-foreground: #171717;
+  --sidebar-border: #E8DFD5;
+  --sidebar-ring: #8B4513;
 }
 
 .dark {
-  --background: oklch(0.15 0.02 35);
-  --foreground: oklch(0.97 0.003 0);
-  --card: oklch(0.18 0.025 35);
-  --card-foreground: oklch(0.97 0.003 0);
-  --popover: oklch(0.18 0.025 35);
-  --popover-foreground: oklch(0.97 0.003 0);
-  --primary: oklch(0.6 0.18 200);
-  --primary-foreground: oklch(0.15 0.02 35);
-  --secondary: oklch(0.5 0.08 200);
-  --secondary-foreground: oklch(0.97 0.003 0);
-  --muted: oklch(0.25 0.02 35);
-  --muted-foreground: oklch(0.7 0.01 65);
-  --accent: oklch(0.75 0.15 50);
-  --accent-foreground: oklch(0.15 0.02 35);
-  --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.97 0.003 0);
-  --border: oklch(0.25 0.02 35);
-  --input: oklch(0.25 0.02 35);
-  --ring: oklch(0.6 0.18 200);
-  --chart-1: oklch(0.6 0.18 200);
-  --chart-2: oklch(0.75 0.15 50);
-  --chart-3: oklch(0.65 0.1 150);
-  --chart-4: oklch(0.7 0.1 200);
-  --chart-5: oklch(0.72 0.12 40);
-  --sidebar: oklch(0.18 0.025 35);
-  --sidebar-foreground: oklch(0.97 0.003 0);
-  --sidebar-primary: oklch(0.6 0.18 200);
-  --sidebar-primary-foreground: oklch(0.15 0.02 35);
-  --sidebar-accent: oklch(0.25 0.02 35);
-  --sidebar-accent-foreground: oklch(0.97 0.003 0);
-  --sidebar-border: oklch(0.25 0.02 35);
-  --sidebar-ring: oklch(0.6 0.18 200);
+  --background: #1A1410;
+  --foreground: #F5EDE4;
+  --card: #231C16;
+  --card-foreground: #F5EDE4;
+  --popover: #231C16;
+  --popover-foreground: #F5EDE4;
+  --primary: #A0522D;
+  --primary-foreground: #F5EDE4;
+  --secondary: #D4AF37;
+  --secondary-foreground: #1A1410;
+  --muted: #2C1810;
+  --muted-foreground: #C4B5A5;
+  --accent: #D4AF37;
+  --accent-foreground: #1A1410;
+  --destructive: #DC2626;
+  --destructive-foreground: #F5EDE4;
+  --border: #3D2E24;
+  --input: #3D2E24;
+  --ring: #A0522D;
+  --button: #D4AF37;
+  --button-foreground: #1A1410;
+  --chart-1: #A0522D;
+  --chart-2: #D4AF37;
+  --chart-3: #8B4513;
+  --chart-4: #CD853F;
+  --chart-5: #DAA520;
+  --sidebar: #231C16;
+  --sidebar-foreground: #F5EDE4;
+  --sidebar-primary: #A0522D;
+  --sidebar-primary-foreground: #F5EDE4;
+  --sidebar-accent: #2C1810;
+  --sidebar-accent-foreground: #F5EDE4;
+  --sidebar-border: #3D2E24;
+  --sidebar-ring: #A0522D;
 }
 
 /* Updated fonts for elegant wedding aesthetic */

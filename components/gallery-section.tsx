@@ -1,69 +1,27 @@
 "use client"
 
 import { useState } from "react"
+import { Play } from "lucide-react"
 
 const galleryItems = [
-  { id: 1, type: "image", src: "/1.png", title: "Modern Living Room" },
-  { id: 2, type: "image", src: "/2.png", title: "Luxury Bedroom Suite" },
-  { id: 3, type: "image", src: "/3.png", title: "Contemporary Kitchen" },
-  { id: 4, type: "image", src: "/4.png", title: "Office Space Design" },
-  { id: 5, type: "image", src: "/5.png", title: "Minimalist Home" },
-  { id: 6, type: "image", src: "/6.png", title: "Commercial Space" },
-  { id: 7, type: "image", src: "/7.png", title: "Elegant Dining Area" },
-  { id: 8, type: "image", src: "/8.png", title: "Luxury Home Spa" },
-  { id: 9, type: "image", src: "/9.png", title: "Kids Room Design" },
-  { id: 10, type: "image", src: "/10.png", title: "Master Bedroom" },
-  { id: 11, type: "image", src: "/11.png", title: "Modular Kitchen" },
-  { id: 12, type: "image", src: "/12.png", title: "Living Room Decor" },
-  { id: 13, type: "image", src: "/13.png", title: "Wardrobe Design" },
-  { id: 14, type: "image", src: "/14.png", title: "Study Room" },
-  { id: 15, type: "image", src: "/15.png", title: "Pooja Room" },
-  { id: 16, type: "image", src: "/16.png", title: "Balcony Design" },
-  { id: 17, type: "image", src: "/17.png", title: "Foyer Entrance" },
-  { id: 18, type: "image", src: "/18.png", title: "TV Unit Design" },
-  { id: 19, type: "image", src: "/19.png", title: "Bathroom Interior" },
-  { id: 20, type: "image", src: "/20.png", title: "Guest Bedroom" },
-  { id: 21, type: "image", src: "/21.png", title: "False Ceiling" },
-  { id: 22, type: "image", src: "/22.png", title: "Wall Paneling" },
-  { id: 23, type: "image", src: "/23.png", title: "Home Office" },
-  { id: 24, type: "image", src: "/24.png", title: "Dining Table Setup" },
-  { id: 25, type: "image", src: "/25.png", title: "Crockery Unit" },
-  { id: 26, type: "image", src: "/26.png", title: "Bar Counter" },
-  { id: 27, type: "image", src: "/27.png", title: "Shoe Rack Design" },
-  { id: 28, type: "image", src: "/28.png", title: "Partition Design" },
-  { id: 29, type: "image", src: "/29.png", title: "Window Treatments" },
-  { id: 30, type: "image", src: "/30.png", title: "Lighting Design" },
-  { id: 31, type: "image", src: "/31.png", title: "Flooring Patterns" },
-  { id: 32, type: "image", src: "/32.png", title: "Open Kitchen" },
-  { id: 33, type: "image", src: "/33.png", title: "L-Shape Kitchen" },
-  { id: 34, type: "image", src: "/34.png", title: "U-Shape Kitchen" },
-  { id: 35, type: "image", src: "/35.png", title: "Island Kitchen" },
-  { id: 36, type: "image", src: "/36.png", title: "Compact Kitchen" },
-  { id: 37, type: "image", src: "/37.png", title: "Premium Bedroom" },
-  { id: 38, type: "image", src: "/38.png", title: "Teen Room Design" },
-  { id: 39, type: "image", src: "/39.png", title: "Nursery Room" },
-  { id: 40, type: "image", src: "/40.png", title: "Walk-in Closet" },
-  { id: 41, type: "image", src: "/41.png", title: "Dressing Area" },
-  { id: 42, type: "image", src: "/42.png", title: "Reading Corner" },
-  { id: 43, type: "image", src: "/43.png", title: "Entertainment Room" },
-  { id: 44, type: "image", src: "/44.png", title: "Home Theater" },
-  { id: 45, type: "image", src: "/45.png", title: "Gym Room Design" },
-  { id: 46, type: "image", src: "/46.png", title: "Utility Room" },
-  { id: 47, type: "image", src: "/47.png", title: "Terrace Garden" },
-  { id: 48, type: "image", src: "/48.png", title: "Indoor Plants" },
-  { id: 49, type: "image", src: "/49.png", title: "Accent Walls" },
-  { id: 50, type: "image", src: "/50.png", title: "Bookshelf Design" },
-  { id: 51, type: "image", src: "/51.png", title: "Console Table" },
-  { id: 52, type: "image", src: "/52.png", title: "Coffee Table Setup" },
-  { id: 53, type: "image", src: "/53.png", title: "Sofa Design" },
-  { id: 54, type: "image", src: "/54.png", title: "Bed Design" },
-  { id: 55, type: "image", src: "/55.png", title: "Mirror Design" },
-  { id: 56, type: "image", src: "/56.png", title: "Art & Decor" },
+  { id: 1, type: "image", src: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&h=600&fit=crop", title: "Vintage Rolls Royce Wedding Car" },
+  { id: 2, type: "video", src: "https://www.youtube.com/embed/dQw4w9WgXcQ", thumbnail: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=600&fit=crop", title: "Classic Open Top Vintage" },
+  { id: 3, type: "image", src: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&h=600&fit=crop", title: "Royal Baraat Car" },
+  { id: 4, type: "image", src: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=600&h=600&fit=crop", title: "Decorated Wedding Vintage" },
+  { id: 5, type: "video", src: "https://www.youtube.com/embed/dQw4w9WgXcQ", thumbnail: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=600&fit=crop", title: "Bride & Groom Car" },
+  { id: 6, type: "image", src: "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=600&h=600&fit=crop", title: "Vintage Car Vadodara" },
+  { id: 7, type: "image", src: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&h=600&fit=crop", title: "Wedding Car Ahmedabad" },
+  { id: 8, type: "video", src: "https://www.youtube.com/embed/dQw4w9WgXcQ", thumbnail: "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=600&h=600&fit=crop", title: "Classic Car Surat" },
+  { id: 9, type: "image", src: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&h=600&fit=crop", title: "Luxury Vintage Wedding" },
+  { id: 10, type: "image", src: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&h=600&fit=crop", title: "Antique Wedding Car" },
+  { id: 11, type: "image", src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=600&fit=crop", title: "Open Vintage Car Wedding" },
+  { id: 12, type: "image", src: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&h=600&fit=crop", title: "Shaadi Vintage Car" },
 ]
 
 export function GallerySection() {
-  const [selectedFilter, setSelectedFilter] = useState<"all" | "image">("all")
+  const [selectedFilter, setSelectedFilter] = useState<"all" | "image" | "video">("all")
   const [showAll, setShowAll] = useState(false)
+  const [activeVideo, setActiveVideo] = useState<string | null>(null)
 
   const filteredItems =
     selectedFilter === "all" ? galleryItems : galleryItems.filter((item) => item.type === selectedFilter)
@@ -74,13 +32,34 @@ export function GallerySection() {
     <section id="gallery" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-accent font-mono uppercase tracking-wider mb-4">Our Portfolio</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Gallery of Excellence</h2>
+          <p className="text-secondary font-mono uppercase tracking-wider mb-4">Our Collection</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">Vintage Wedding Car Gallery</h2>
           <p className="text-lg text-muted-foreground leading-relaxed font-mono">
             {
-              "Explore our stunning collection of interior designs - from modern living rooms to luxurious bedrooms"
+              "Explore our stunning collection of vintage wedding cars - from classic Rolls Royce to elegant open top cars perfect for your special day"
             }
           </p>
+        </div>
+
+        {/* Filter Tabs */}
+        <div className="flex justify-center gap-4 mb-8">
+          {[
+            { key: "all", label: "All" },
+            { key: "image", label: "Photos" },
+            { key: "video", label: "Videos" },
+          ].map((filter) => (
+            <button
+              key={filter.key}
+              onClick={() => setSelectedFilter(filter.key as "all" | "image" | "video")}
+              className={`px-6 py-2 rounded-full font-mono text-sm transition-all ${
+                selectedFilter === filter.key
+                  ? "bg-secondary text-white"
+                  : "bg-primary/10 text-primary hover:bg-primary/20"
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
         </div>
 
         {/* Gallery Grid */}
@@ -88,47 +67,82 @@ export function GallerySection() {
           {displayedItems.map((item) => (
             <div
               key={item.id}
-              className="group relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all cursor-pointer"
+              className="group relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all cursor-pointer border-2 border-transparent hover:border-secondary"
+              onClick={() => item.type === "video" && setActiveVideo(item.src)}
             >
               <img
-                src={item.src}
+                src={item.type === "video" ? item.thumbnail : item.src}
                 alt={item.title}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {item.type === "video" && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-secondary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                  </div>
+                </div>
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2C1810]/90 via-[#8B4513]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="text-primary-foreground font-bold text-sm md:text-lg">{item.title}</h3>
+                  <h3 className="text-white font-bold text-sm md:text-lg">{item.title}</h3>
+                  {item.type === "video" && (
+                    <span className="text-secondary text-xs font-mono">▶ Click to play</span>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Show More/Less Button */}
-        {filteredItems.length > 12 && (
-          <div className="text-center mt-8">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="px-8 py-3 bg-primary hover:bg-accent text-primary-foreground rounded-full font-mono transition-colors"
-            >
-              {showAll ? "Show Less" : `View All ${filteredItems.length} Photos`}
-            </button>
+        {/* SEO Keywords Section */}
+        <div className="mt-16 text-center">
+          <p className="text-secondary font-mono uppercase tracking-wider mb-4">Book Your Vintage Car</p>
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+            Premium Vintage Wedding Cars Across Gujarat
+          </h3>
+          <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+            {[
+              "Vintage Car Rental Vadodara",
+              "Wedding Car Ahmedabad",
+              "Classic Car Surat",
+              "Rolls Royce Wedding",
+              "Open Top Vintage",
+              "Baraat Car Gujarat",
+              "Shaadi Vintage Car",
+              "Marriage Car Rental",
+              "Antique Wedding Car",
+              "Luxury Vintage Hire",
+            ].map((tag, index) => (
+              <span key={index} className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-mono">
+                {tag}
+              </span>
+            ))}
           </div>
-        )}
-
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground font-mono mb-6 text-lg">
-            {"Want to transform your space? Contact us today for a free consultation"}
-          </p>
-          <a
-            href="#contact"
-            className="px-8 py-3 bg-primary hover:bg-accent text-primary-foreground rounded-full font-mono transition-colors inline-block"
-          >
-            Get Free Quote
-          </a>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {activeVideo && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setActiveVideo(null)}
+        >
+          <div className="relative w-full max-w-4xl aspect-video">
+            <button
+              onClick={() => setActiveVideo(null)}
+              className="absolute -top-12 right-0 text-white hover:text-secondary transition-colors"
+            >
+              <span className="text-lg font-mono">✕ Close</span>
+            </button>
+            <iframe
+              src={activeVideo}
+              className="w-full h-full rounded-lg"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

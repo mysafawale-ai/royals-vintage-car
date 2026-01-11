@@ -5,44 +5,44 @@ import { useState } from "react"
 
 const faqs = [
   {
-    question: "What services does Nesture Interiors offer?",
+    question: "What vintage cars do you offer for weddings?",
     answer:
-      "Nesture Interiors provides comprehensive interior design services including residential interior design, office design, commercial interiors, space planning, 3D visualization, furniture design, and complete project management for homes, offices, and commercial spaces in Bangalore.",
+      "ROYALS - THE BARODE VINTAGE CARS offers a premium collection including Rolls Royce vintage cars, open top classic cars, antique automobiles, and luxury vintage collection. All our cars are perfect for baraat, vidaai, bride entry, and wedding ceremonies.",
   },
   {
-    question: "How much does interior design cost in Bangalore?",
+    question: "Which areas in Gujarat do you provide vintage car rental service?",
     answer:
-      "Our pricing is transparent and tailored to your needs. We offer packages starting from ₹99,999 for single room makeovers to custom quotes for luxury commercial projects. All packages include professional consultation and 3D visualization.",
+      "We provide vintage wedding car rental services across Gujarat including Vadodara (Baroda), Ahmedabad, Surat, Anand, Nadiad, Bharuch, Gandhinagar, and surrounding areas. We cover Vadodara neighborhoods like Gotri, Alkapuri, Akota, Sayajigunj, Fatehgunj, and more.",
   },
   {
-    question: "Do you provide 3D visualization before execution?",
+    question: "How much does vintage car rental cost for weddings?",
     answer:
-      "Yes! We provide advanced 3D visualization and walk-through for all our premium and commercial packages. This helps you see the design before any execution begins, ensuring complete satisfaction.",
+      "Our vintage car rental prices vary based on the car type, duration, and location. We offer flexible packages for baraat, bride entry, and complete wedding coverage. Contact us on WhatsApp for instant quotes tailored to your requirements.",
   },
   {
-    question: "What is your project timeline?",
+    question: "How far in advance should I book a vintage wedding car?",
     answer:
-      "Project timelines vary based on project size and complexity. Our basic makeover takes 3 weeks, premium home design takes 6-8 weeks, and commercial projects have customized timelines. We ensure quality without rushing.",
+      "We recommend booking your vintage wedding car at least 2-4 weeks in advance, especially during wedding season (November-February). However, we also accommodate last-minute bookings based on availability.",
   },
   {
-    question: "Do you handle installation and project management?",
+    question: "Do you provide decorated vintage cars for weddings?",
     answer:
-      "Absolutely! We provide complete project management, installation supervision, and on-site support. Our team ensures every detail is executed to perfection according to the approved design.",
+      "Yes! All our vintage wedding cars come beautifully decorated with flowers, ribbons, and traditional elements. We also offer custom decoration packages to match your wedding theme and colors.",
   },
   {
-    question: "Are you available for interior design in all areas of Bangalore?",
+    question: "Is a chauffeur included with the vintage car rental?",
     answer:
-      "Yes, we serve all premium areas of Bangalore including Koramangala, Indiranagar, Whitefield, HSR Layout, Jayanagar, JP Nagar, Marathahalli, Electronic City, and surrounding localities. We also offer services across Karnataka.",
+      "Yes, all our vintage car rentals include a professional chauffeur dressed in traditional attire. Our drivers are experienced and ensure a smooth, royal experience for your wedding day.",
   },
   {
-    question: "Can you design both modern and traditional interiors?",
+    question: "Can I use the vintage car for pre-wedding photoshoot?",
     answer:
-      "Yes, our talented designers specialize in multiple styles including modern, minimalist, traditional, luxury, and fusion designs. We customize every design to match your lifestyle and preferences.",
+      "Absolutely! Our vintage cars make stunning props for pre-wedding photoshoots and engagement ceremonies. We offer special photography packages with flexible timing for shoots.",
   },
   {
-    question: "How do I get started with Nesture Interiors?",
+    question: "What happens if the vintage car breaks down on my wedding day?",
     answer:
-      "Getting started is easy! Contact us via WhatsApp, phone, or fill our online form. We'll schedule a free consultation to understand your vision, space, and budget, then propose the best design solution for you.",
+      "We maintain our vintage cars meticulously to ensure reliability. In the rare event of any issue, we have backup vehicles ready and our team is available 24/7 to ensure your wedding goes smoothly.",
   },
 ]
 
@@ -53,12 +53,12 @@ export function FAQSection() {
     <section className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-accent font-mono uppercase tracking-wider mb-4">FAQ</p>
+          <p className="text-secondary font-mono uppercase tracking-wider mb-4">FAQ</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
-            Frequently Asked Questions About Interior Design
+            Frequently Asked Questions About Vintage Car Rental
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed font-mono">
-            Find answers to common questions about our interior design services in Bangalore
+            Find answers to common questions about our vintage wedding car rental services in Gujarat
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-card rounded-lg border border-border overflow-hidden hover:border-primary/50 transition-colors"
+              className="bg-card rounded-lg border border-border overflow-hidden hover:border-secondary/50 transition-colors"
             >
               <button
                 onClick={() => setExpandedIndex(expandedIndex === index ? null : index)}
@@ -74,7 +74,7 @@ export function FAQSection() {
               >
                 <h3 className="text-lg font-semibold text-foreground">{faq.question}</h3>
                 <ChevronDown
-                  className={`w-5 h-5 text-primary transition-transform flex-shrink-0 ${
+                  className={`w-5 h-5 text-secondary transition-transform flex-shrink-0 ${
                     expandedIndex === index ? "rotate-180" : ""
                   }`}
                 />

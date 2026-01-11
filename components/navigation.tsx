@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone } from "lucide-react"
+import Link from "next/link"
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,50 +35,60 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex items-center pt-2">
-            <h1 className={`text-lg sm:text-2xl md:text-3xl font-bold transition-colors duration-300 ${isScrolled ? "text-black" : "text-white"}`}>Nesture Interiors</h1>
+            <Link href="/" className={`text-sm sm:text-lg md:text-xl font-bold transition-colors duration-300 leading-tight ${isScrolled ? "text-primary" : "text-white"}`}>
+              ROYALS<br className="sm:hidden" /><span className="hidden sm:inline"> - </span>THE BARODE<br className="md:hidden" /> VINTAGE CARS
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-sm text-foreground hover:text-primary transition-colors font-mono"
+              className={`text-sm transition-colors font-mono ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-secondary"}`}
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-sm text-foreground hover:text-primary transition-colors font-mono"
+              className={`text-sm transition-colors font-mono ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-secondary"}`}
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("gallery")}
-              className="text-sm text-foreground hover:text-primary transition-colors font-mono"
+              className={`text-sm transition-colors font-mono ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-secondary"}`}
             >
               Gallery
             </button>
             <button
+              onClick={() => scrollToSection("services")}
+              className={`text-sm transition-colors font-mono ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-secondary"}`}
+            >
+              Services
+            </button>
+            <button
               onClick={() => scrollToSection("contact")}
-              className="text-sm text-foreground hover:text-primary transition-colors font-mono"
+              className={`text-sm transition-colors font-mono ${isScrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-secondary"}`}
             >
               Contact
             </button>
-            <Button className="bg-primary hover:bg-accent text-white font-semibold text-sm px-4 py-2 h-auto">
-              <Phone className="w-4 h-4 mr-2" />
-              Call Now
-            </Button>
+            <a href="tel:+918830612287">
+              <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold text-sm px-4 py-2 h-auto">
+                <Phone className="w-4 h-4 mr-2" />
+                Book Now
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-foreground" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className={`md:hidden ${isScrolled ? "text-foreground" : "text-white"}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-3 bg-card border-t border-border">
+          <div className="md:hidden py-3 bg-card border-t border-border rounded-b-lg">
             <div className="flex flex-col gap-2">
               <button
                 onClick={() => scrollToSection("home")}
@@ -98,15 +109,23 @@ export function Navigation() {
                 Gallery
               </button>
               <button
+                onClick={() => scrollToSection("services")}
+                className="text-left text-sm text-foreground hover:text-primary transition-colors font-mono py-2 px-3"
+              >
+                Services
+              </button>
+              <button
                 onClick={() => scrollToSection("contact")}
                 className="text-left text-sm text-foreground hover:text-primary transition-colors font-mono py-2 px-3"
               >
                 Contact
               </button>
-              <Button className="bg-primary hover:bg-accent text-white font-semibold w-full text-sm py-2 h-auto">
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </Button>
+              <a href="tel:+918830612287" className="px-3 py-2">
+                <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold text-sm">
+                  <Phone className="w-4 h-4 mr-2" />
+                  Book Now
+                </Button>
+              </a>
             </div>
           </div>
         )}

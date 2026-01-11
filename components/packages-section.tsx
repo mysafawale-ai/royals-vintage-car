@@ -1,63 +1,63 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Check, Sparkles, Crown, Star } from "lucide-react"
+import { Check, Sparkles, Crown, Star, Car } from "lucide-react"
 
 const packages = [
   {
-    name: "Basic Interior Makeover",
-    price: "Starting ₹99,999",
+    name: "Classic Package",
+    price: "Starting ₹15,000",
     icon: Star,
     popular: false,
     features: [
-      "Complete space assessment & evaluation",
-      "Color palette & layout suggestions",
-      "2D design plan",
-      "Furniture arrangement consultation",
-      "Perfect for single room renovation",
-      "3 weeks delivery timeline",
+      "1 Vintage Car for 4 hours",
+      "Professional uniformed chauffeur",
+      "Car decoration with flowers",
+      "Ideal for Baraat or Vidaai",
+      "Covers Vadodara city area",
+      "Complimentary refreshments",
     ],
   },
   {
-    name: "Premium Home Design",
-    price: "Starting ₹3,99,999",
+    name: "Royal Wedding Package",
+    price: "Starting ₹35,000",
     icon: Sparkles,
     popular: true,
     features: [
-      "Full home design consultation",
-      "3D visualization of entire space",
-      "Custom furniture design options",
-      "Advanced lighting & ambiance planning",
-      "Premium material selections included",
-      "Project management & supervision",
-      "Complete on-site installation support",
-      "6-8 weeks professional execution",
+      "2 Vintage Cars for full day",
+      "Baraat + Bride Entry covered",
+      "Premium floral decoration",
+      "Red carpet service",
+      "Professional photography assistance",
+      "Uniformed chauffeurs in royal attire",
+      "Covers Vadodara, Ahmedabad, Surat",
+      "Backup car on standby",
     ],
   },
   {
-    name: "Luxury Commercial Design",
+    name: "Maharaja Package",
     price: "Custom Quote",
     icon: Crown,
     popular: false,
     features: [
-      "Full commercial space transformation",
-      "Brand identity integration in design",
-      "Advanced 3D visualization & walk-through",
-      "Custom furniture & fixtures design",
-      "Professional lighting & ambiance design",
-      "Dedicated project manager assigned",
-      "Complete installation & supervision",
-      "Quality assurance & finishing touches",
-      "Post-project maintenance consultation",
-      "Customized timeline & execution",
+      "3+ Vintage Cars for entire event",
+      "Complete wedding transportation",
+      "Baraat, Bride Entry & Vidaai",
+      "Premium Rolls Royce & open-top cars",
+      "Exclusive royal decoration",
+      "Photography & videography support",
+      "Pan-Gujarat coverage",
+      "Dedicated wedding coordinator",
+      "Multi-day rental available",
+      "VIP treatment throughout",
     ],
   },
 ]
 
 export function PackagesSection() {
   const handleWhatsAppInquiry = (packageName: string) => {
-    const message = `Hello! I'm interested in the ${packageName} interior design package. Please provide more details.`
-    const whatsappNumber = "919876543210"
+    const message = `Hello! I'm interested in the ${packageName} vintage car rental package for my wedding. Please provide more details.`
+    const whatsappNumber = "918830612287"
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappURL, "_blank")
   }
@@ -66,12 +66,12 @@ export function PackagesSection() {
     <section id="packages" className="py-12 md:py-32 bg-card">
       <div className="container mx-auto px-3 sm:px-4">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
-          <p className="text-accent font-mono uppercase tracking-wider mb-2 md:mb-4 text-xs sm:text-sm">Interior Design Pricing</p>
+          <p className="text-secondary font-mono uppercase tracking-wider mb-2 md:mb-4 text-xs sm:text-sm">Wedding Car Rental Packages</p>
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4 md:mb-6 text-balance">
-            Professional Interior Design Packages in Vadodara
+            Vintage Car Rental Packages in Gujarat
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed font-mono">
-            {"Transparent pricing with no hidden costs. Comprehensive design packages with flexible timelines and complete project management. Award-winning interior design service in Vadodara for homes, offices & commercial spaces"}
+            {"Transparent pricing for wedding vintage car rental. Choose from our carefully curated packages for Baraat, Bride Entry, Vidaai & Pre-Wedding shoots across Vadodara, Ahmedabad & Surat"}
           </p>
         </div>
 
@@ -80,11 +80,11 @@ export function PackagesSection() {
             <div
               key={index}
               className={`relative bg-background rounded-lg p-8 border-2 transition-all hover:shadow-2xl ${
-                pkg.popular ? "border-accent shadow-xl scale-105" : "border-border hover:border-primary"
+                pkg.popular ? "border-secondary shadow-xl scale-105" : "border-border hover:border-primary"
               }`}
             >
               {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-6 py-1 rounded-full text-sm font-mono uppercase tracking-wider">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-primary-foreground px-6 py-1 rounded-full text-sm font-mono uppercase tracking-wider">
                   Most Popular
                 </div>
               )}
@@ -103,8 +103,8 @@ export function PackagesSection() {
               <ul className="space-y-4 mb-8">
                 {pkg.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-primary" />
+                    <div className="w-5 h-5 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-secondary" />
                     </div>
                     <span className="text-foreground font-mono text-sm leading-relaxed">{feature}</span>
                   </li>
@@ -114,8 +114,8 @@ export function PackagesSection() {
               <Button
                 className={`w-full ${
                   pkg.popular
-                    ? "bg-accent hover:bg-secondary text-accent-foreground"
-                    : "bg-primary hover:bg-accent text-primary-foreground"
+                    ? "bg-secondary hover:bg-secondary/90 text-primary-foreground"
+                    : "bg-primary hover:bg-primary/90 text-primary-foreground"
                 }`}
                 size="lg"
                 onClick={() => handleWhatsAppInquiry(pkg.name)}
@@ -128,21 +128,21 @@ export function PackagesSection() {
 
         {/* Additional Info */}
         <div className="mt-16 max-w-4xl mx-auto">
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-8">
+          <div className="bg-primary/5 border border-secondary/20 rounded-lg p-8">
             <h3 className="text-2xl font-bold text-foreground mb-6 text-center">What's Included in All Packages</h3>
             <div className="grid sm:grid-cols-2 gap-6">
               {[
-                "Free consultation & site assessment",
-                "Professional design recommendations",
-                "3D visualization & mockups",
-                "Material selection guidance",
-                "Flexible project timelines",
-                "Service across all Vadodara areas",
-                "On-site supervision & support",
-                "Quality assurance guarantee",
+                "Professional uniformed chauffeur",
+                "Well-maintained vintage cars",
+                "Basic floral car decoration",
+                "On-time arrival guarantee",
+                "Insurance coverage included",
+                "Service across Gujarat",
+                "24/7 customer support",
+                "Flexible booking options",
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <div className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
                   <span className="text-foreground font-mono">{item}</span>
                 </div>
               ))}

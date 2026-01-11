@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { Download, LogOut, Phone, User, Home, MapPin, IndianRupee, Calendar } from 'lucide-react'
+import { Download, LogOut, Phone, User, Car, MapPin, Calendar, IndianRupee } from 'lucide-react'
 
 const EMAIL = 'dailyleads@gmail.com'
 const PASSWORD = 'DLead@7890'
@@ -13,8 +13,8 @@ interface Lead {
   id: string
   fullName: string
   phoneNumber: string
-  propertyType: string
-  budget: string
+  propertyType: string // Used for car type
+  budget: string // Used for wedding date
   city: string
   status?: string
   submittedAt: string
@@ -81,7 +81,7 @@ export default function LeadsPage() {
   }
 
   const exportCSV = () => {
-    const headers = ['Full Name', 'Phone', 'Property Type', 'City', 'Budget', 'Status', 'Date']
+    const headers = ['Full Name', 'Phone', 'Car Type', 'Location', 'Wedding Date', 'Status', 'Date']
     const rows = leads.map(l => [
       l.fullName || '',
       l.phoneNumber || '',
@@ -96,7 +96,7 @@ export default function LeadsPage() {
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = 'leads.csv'
+    a.download = 'vintage-car-leads.csv'
     a.click()
   }
 
@@ -165,7 +165,7 @@ export default function LeadsPage() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
           <div>
-            <h1 className="text-2xl font-bold text-gray-800">Interior Design Leads</h1>
+            <h1 className="text-2xl font-bold text-gray-800">Vintage Car Booking Leads</h1>
             <p className="text-gray-500 text-sm">Total: {leads.length} leads</p>
           </div>
           <div className="flex gap-2">
@@ -219,17 +219,17 @@ export default function LeadsPage() {
                     <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> Phone</div>
                   </th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">
-                    <div className="flex items-center gap-2"><Home className="w-4 h-4" /> Property</div>
+                    <div className="flex items-center gap-2"><Car className="w-4 h-4" /> Car Type</div>
                   </th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">
-                    <div className="flex items-center gap-2"><MapPin className="w-4 h-4" /> City</div>
+                    <div className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Location</div>
                   </th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">
-                    <div className="flex items-center gap-2"><IndianRupee className="w-4 h-4" /> Budget</div>
+                    <div className="flex items-center gap-2"><Calendar className="w-4 h-4" /> Wedding Date</div>
                   </th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">Status</th>
                   <th className="text-left py-3 px-4 font-semibold text-gray-700">
-                    <div className="flex items-center gap-2"><Calendar className="w-4 h-4" /> Date</div>
+                    <div className="flex items-center gap-2"><Calendar className="w-4 h-4" /> Submitted</div>
                   </th>
                 </tr>
               </thead>

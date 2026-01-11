@@ -1,7 +1,8 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { WhatsAppFloat } from "@/components/whatsapp-float"
 import "./globals.css"
 
 const playfairDisplay = Playfair_Display({
@@ -16,47 +17,53 @@ const inter = Inter({
   display: "swap",
 })
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+}
+
 export const metadata: Metadata = {
-  title: "Nesture Interiors - Best Interior Designer in Bangalore | Transform Your Space",
+  title: "ROYALS - THE BARODE VINTAGE CARS | Premium Wedding Car Rental Vadodara, Gujarat",
   description:
-    "Nesture Interiors - Where innovation meets elegance. Expert residential & commercial interior design in Bangalore, Karnataka. Beautiful interiors yet affordable. Free consultation & 3D visualization. Call +91 861 808 0171",
+    "ROYALS - THE BARODE VINTAGE CARS offers luxury vintage car rental for weddings in Vadodara, Ahmedabad, Surat & Gujarat. Rolls Royce, open top vintage cars for shaadi, baraat & marriage. Book your dream wedding car today!",
   keywords:
-    "interior design Bangalore, home interior design, office interior design, commercial interiors, space planning, interior decorator Bangalore, home renovation Bangalore, luxury interiors, modern design, interior styling, furniture design, kitchen design, bedroom interior, living room design, interior design services, best interior designer Bangalore, Nesture Interiors",
-  authors: [{ name: "Nesture Interiors Bangalore" }],
-  creator: "Nesture Interiors",
-  publisher: "Nesture Interiors",
+    "vintage car rental, wedding car rental, vintage wedding car, classic car wedding, car rental wedding, vintage wedding car rental, wedding vintage car on rent, vintage car for wedding, open top vintage car wedding, Rolls Royce vintage car rental, vintage car rental from Vadodara, wedding vintage cars delivery, vintage wedding car hire, vintage car on rent for shaadi, classic vintage cars wedding, vintage wedding car service, wedding vintage car rental service, vintage car rental for marriage, open vintage car wedding, luxury vintage car on hire wedding, vintage car rental wedding, wedding car vintage, classic car rental wedding, vintage Rolls Royce wedding car, antique car for bride groom, vintage wedding baraat car rental, Vadodara, Ahmedabad, Surat, Gujarat",
+  authors: [{ name: "ROYALS - THE BARODE VINTAGE CARS" }],
+  creator: "ROYALS - THE BARODE VINTAGE CARS",
+  publisher: "ROYALS - THE BARODE VINTAGE CARS",
   formatDetection: {
     email: true,
     address: true,
     telephone: true,
   },
-  metadataBase: new URL("https://nestureinteriors.com"),
+  metadataBase: new URL("https://royalsvintagecars.com"),
   alternates: {
-    canonical: "https://nestureinteriors.com",
+    canonical: "https://royalsvintagecars.com",
   },
   openGraph: {
-    title: "Nesture Interiors - Best Interior Designer in Bangalore",
+    title: "ROYALS - THE BARODE VINTAGE CARS | Premium Vintage Wedding Car Rental Gujarat",
     description:
-      "Transform your space with Nesture Interiors - Where innovation meets elegance. Residential & commercial interior design in Bangalore with expert craftsmanship.",
-    url: "https://nestureinteriors.com",
-    siteName: "Nesture Interiors",
+      "Book luxury vintage cars for your dream wedding in Vadodara, Ahmedabad & Surat. Rolls Royce, open top vintage cars for baraat, shaadi & marriage ceremonies. Premium wedding car rental service.",
+    url: "https://royalsvintagecars.com",
+    siteName: "ROYALS - THE BARODE VINTAGE CARS",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "https://nestureinteriors.com/og-image.jpg",
+        url: "https://royalsvintagecars.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Nesture Interiors - Premium Interior Design in Bangalore",
+        alt: "ROYALS - THE BARODE VINTAGE CARS - Premium Vintage Wedding Car Rental",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nesture Interiors - Best Interior Designer in Bangalore",
-    description: "Expert interior design for homes, offices & commercial spaces. Where innovation meets elegance. Transform your space today!",
-    images: ["https://nestureinteriors.com/og-image.jpg"],
-    creator: "@nestureinteriors",
+    title: "ROYALS - THE BARODE VINTAGE CARS | Vintage Wedding Car Rental Gujarat",
+    description: "Premium vintage car rental for weddings in Vadodara, Ahmedabad & Surat. Rolls Royce, classic cars for your dream wedding!",
+    images: ["https://royalsvintagecars.com/og-image.jpg"],
+    creator: "@royalsvintagecars",
   },
   robots: {
     index: true,
@@ -68,11 +75,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
   },
   icons: {
     icon: [
@@ -106,73 +108,79 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://nestureinteriors.com/#organization",
-        name: "Nesture Interiors",
-        image: "https://nestureinteriors.com/logo.png",
-        description: "Where innovation meets elegance - Expert residential & commercial interior design services in Bangalore, Karnataka",
-        url: "https://nestureinteriors.com",
-        telephone: "+918618080171",
-        email: "nestureinterior@gmail.com",
+        "@id": "https://royalsvintagecars.com/#organization",
+        name: "ROYALS - THE BARODE VINTAGE CARS",
+        image: "https://royalsvintagecars.com/logo.png",
+        description: "Premium vintage car rental for weddings in Vadodara, Ahmedabad, Surat and across Gujarat. Luxury Rolls Royce, open top vintage cars for shaadi, baraat & marriage ceremonies.",
+        url: "https://royalsvintagecars.com",
+        telephone: "+919876543210",
+        email: "info@royalsvintagecars.com",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Nesture Interiors",
-          addressLocality: "Bangalore",
-          addressRegion: "KA",
-          postalCode: "560001",
+          streetAddress: "Baroda",
+          addressLocality: "Vadodara",
+          addressRegion: "Gujarat",
+          postalCode: "390001",
           addressCountry: "IN",
         },
         sameAs: [],
-        priceRange: "$$$",
-        serviceArea: {
-          "@type": "City",
-          name: "Bangalore",
-        },
-        areaServed: ["Koramangala", "Indiranagar", "Whitefield", "HSR Layout", "Jayanagar", "JP Nagar", "Marathahalli", "Electronic City"],
+        priceRange: "₹₹₹",
+        serviceArea: [
+          { "@type": "City", name: "Vadodara" },
+          { "@type": "City", name: "Ahmedabad" },
+          { "@type": "City", name: "Surat" },
+          { "@type": "State", name: "Gujarat" },
+        ],
+        areaServed: [
+          "Vadodara", "Ahmedabad", "Surat", "Anand", "Nadiad", "Bharuch", "Gandhinagar", 
+          "Gotri", "Alkapuri", "Akota", "Sayajigunj", "Fatehgunj", "Sevasi", "Manjalpur",
+          "Ellora Park", "Waghodia Road", "Vasna Bhayali", "Karelibaug", "Raopura", "Nizampura"
+        ],
       },
       {
         "@type": "Organization",
-        "@id": "https://nestureinteriors.com/#organization",
-        name: "Nesture Interiors",
-        url: "https://nestureinteriors.com",
-        logo: "https://nestureinteriors.com/logo.png",
-        foundingDate: "2024",
-        founders: [{ "@type": "Person", name: "Nesture Interiors Team" }],
+        "@id": "https://royalsvintagecars.com/#organization",
+        name: "ROYALS - THE BARODE VINTAGE CARS",
+        url: "https://royalsvintagecars.com",
+        logo: "https://royalsvintagecars.com/logo.png",
+        foundingDate: "2020",
+        founders: [{ "@type": "Person", name: "ROYALS Team" }],
         knowsAbout: [
-          "Interior Design",
-          "Home Design",
-          "Office Interior Design",
-          "Commercial Interior Design",
-          "Space Planning",
-          "Furniture Design",
+          "Vintage Car Rental",
+          "Wedding Car Rental",
+          "Classic Car Wedding",
+          "Rolls Royce Rental",
+          "Baraat Car Rental",
+          "Marriage Car Hire",
         ],
       },
       {
         "@type": "Service",
-        "@id": "https://nestureinteriors.com/#service-residential",
-        name: "Residential Interior Design",
-        description: "Professional residential interior design services including space planning, 3D visualization, and complete project management",
+        "@id": "https://royalsvintagecars.com/#service-wedding",
+        name: "Vintage Wedding Car Rental",
+        description: "Premium vintage car rental service for weddings including Rolls Royce, open top vintage cars for baraat, vidaai and wedding ceremonies",
         provider: {
-          "@id": "https://nestureinteriors.com/#organization",
+          "@id": "https://royalsvintagecars.com/#organization",
         },
-        areaServed: "Bangalore",
-        priceRange: "$$$",
+        areaServed: ["Vadodara", "Ahmedabad", "Surat", "Gujarat"],
+        priceRange: "₹₹₹",
       },
       {
         "@type": "Service",
-        "@id": "https://nestureinteriors.com/#service-commercial",
-        name: "Commercial Interior Design",
-        description: "Expert commercial and office interior design with brand integration and complete installation supervision",
+        "@id": "https://royalsvintagecars.com/#service-baraat",
+        name: "Vintage Baraat Car Rental",
+        description: "Luxury vintage cars for baraat and groom entry. Make your wedding grand with our classic vintage car collection",
         provider: {
-          "@id": "https://nestureinteriors.com/#organization",
+          "@id": "https://royalsvintagecars.com/#organization",
         },
-        areaServed: "Bangalore",
-        priceRange: "$$$$",
+        areaServed: ["Vadodara", "Ahmedabad", "Surat", "Gujarat"],
+        priceRange: "₹₹₹",
       },
       {
         "@type": "AggregateRating",
-        "@id": "https://nestureinteriors.com/#rating",
+        "@id": "https://royalsvintagecars.com/#rating",
         ratingValue: "4.9",
-        ratingCount: "150",
+        ratingCount: "250",
         bestRating: "5",
         worstRating: "1",
       },
@@ -189,6 +197,7 @@ export default function RootLayout({
       </head>
       <body className={`font-sans antialiased`}>
         {children}
+        <WhatsAppFloat />
         <Analytics />
       </body>
     </html>

@@ -4,7 +4,6 @@ import { ContactForm } from "@/components/contact-form"
 import { GallerySection } from "@/components/gallery-section"
 import { Footer } from "@/components/footer"
 import { Navigation } from "@/components/navigation"
-import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { FAQSection } from "@/components/faq-section"
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
       <GallerySection />
       <FAQSection />
       <Footer />
-      <WhatsAppFloat />
     </main>
   )
 }
