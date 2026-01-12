@@ -6,7 +6,10 @@
 
 export const revalidate = 86400 // Revalidate every 24 hours
 
+export const metadata = formatMetadata(getPageMetadata("atladara"), "https://royalsvintagecars.com/atladara")
 
+
+import { getPageMetadata, formatMetadata } from "@/lib/page-metadata"
 import { KeywordPageLayout } from "@/components/keyword-page-layout"
 import { FooterNew } from "@/components/footer-new"
 

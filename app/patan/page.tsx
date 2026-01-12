@@ -6,8 +6,11 @@
 
 export const revalidate = 86400 // Revalidate every 24 hours
 
+export const metadata = formatMetadata(getPageMetadata("patan"), "https://royalsvintagecars.com/patan")
+
 
 import { FooterNew } from "@/components/footer-new"
+import { getPageMetadata, formatMetadata } from "@/lib/page-metadata"
 import { KeywordPageLayout } from "@/components/keyword-page-layout"
 
 export default function VintageCarRentalPatanPage() {

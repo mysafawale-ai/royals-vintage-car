@@ -6,6 +6,8 @@
 
 export const revalidate = 86400 // Revalidate every 24 hours
 
+export const metadata = formatMetadata(getPageMetadata("leads"), "https://royalsvintagecars.com/leads")
+
 'use client'
 
 import { useState, useEffect } from 'react'
