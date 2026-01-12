@@ -7,7 +7,7 @@ import { Phone, Crown, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { addLead } from "@/lib/leads"
-import { SiteFooter } from "@/components/site-footer"
+import { FooterNew } from "@/components/footer-new"
 
 // Gujarat cities and areas for the dropdown
 const gujaratLocations = {
@@ -256,7 +256,7 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
         ))}
       </div>
     </section>
-    <SiteFooter />
+    <FooterNew />
     </>
   )
 }

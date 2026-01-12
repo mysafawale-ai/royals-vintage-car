@@ -1,4 +1,4 @@
-import { SiteFooter } from "@/components/site-footer"
+import { FooterNew } from "@/components/footer-new"
 
 export const metadata = {
   title: "Terms of Service | Vintage Wedding Car Rental",
@@ -160,7 +160,7 @@ export default function TermsOfService() {
         </div>
       </main>
 
-      <SiteFooter />
+      <FooterNew />
     </div>
   )
 }

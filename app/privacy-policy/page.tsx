@@ -1,4 +1,4 @@
-import { SiteFooter } from "@/components/site-footer"
+import { FooterNew } from "@/components/footer-new"
 
 export const metadata = {
   title: "Privacy Policy | Vintage Wedding Car Rental",
@@ -118,7 +118,7 @@ export default function PrivacyPolicy() {
         </div>
       </main>
 
-      <SiteFooter />
+      <FooterNew />
     </div>
   )
 }

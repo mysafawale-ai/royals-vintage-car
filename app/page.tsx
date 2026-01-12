@@ -2,7 +2,7 @@ import { HeroSlider } from "@/components/hero-slider"
 import { AboutSection } from "@/components/about-section"
 import { ContactForm } from "@/components/contact-form"
 import { GallerySection } from "@/components/gallery-section"
-import { SiteFooter } from "@/components/site-footer"
+import { FooterNew } from "@/components/footer-new"
 import { Navigation } from "@/components/navigation"
 import { FAQSection } from "@/components/faq-section"
 
@@ -15,7 +15,7 @@ export default function Home() {
       <ContactForm />
       <GallerySection />
       <FAQSection />
-      <SiteFooter />
+      <FooterNew />
     </main>
   )
 }
