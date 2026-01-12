@@ -1,7 +1,7 @@
 "use client"
 
 import { KeywordPageLayout } from "@/components/keyword-page-layout"
-import { SiteFooter } from "@/components/site-footer"
+import { FooterNew } from "@/components/footer-new"
 
 export default function BrideEntryCarPage() {
   return (
@@ -155,7 +155,7 @@ export default function BrideEntryCarPage() {
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to reserve your perfect <strong>bride entry car</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Make her entrance unforgettable!
       </p>    </KeywordPageLayout>
-    <SiteFooter />
+    <FooterNew />
     </>
   )
 }

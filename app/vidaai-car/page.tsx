@@ -1,7 +1,7 @@
 "use client"
 
 import { KeywordPageLayout } from "@/components/keyword-page-layout"
-import { SiteFooter } from "@/components/site-footer"
+import { FooterNew } from "@/components/footer-new"
 
 export default function VidaaiCarPage() {
   return (
@@ -145,7 +145,7 @@ export default function VidaaiCarPage() {
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to reserve your <strong>vidaai car</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Let us honor this sacred moment with dignity and grace.
       </p>    </KeywordPageLayout>
-    <SiteFooter />
+    <FooterNew />
     </>
   )
 }

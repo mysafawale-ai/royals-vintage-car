@@ -1,7 +1,7 @@
 "use client"
 
 import { KeywordPageLayout } from "@/components/keyword-page-layout"
-import { SiteFooter } from "@/components/site-footer"
+import { FooterNew } from "@/components/footer-new"
 
 export default function VintageCarRentalRanoliPage() {
   return (
@@ -155,7 +155,7 @@ export default function VintageCarRentalRanoliPage() {
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> for <strong>vintage car rental Ranoli</strong> services. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Classic style for the developing frontier!
       </p>    </KeywordPageLayout>
-    <SiteFooter />
+    <FooterNew />
     </>
   )
 }

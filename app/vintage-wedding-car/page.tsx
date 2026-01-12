@@ -1,7 +1,7 @@
 "use client"
 
 import { KeywordPageLayout } from "@/components/keyword-page-layout"
-import { SiteFooter } from "@/components/site-footer"
+import { FooterNew } from "@/components/footer-new"
 
 export default function VintageWeddingCarPage() {
   return (
@@ -145,7 +145,7 @@ export default function VintageWeddingCarPage() {
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to book your <strong>vintage wedding car</strong>. Visit our showroom at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara to fall in love with our collection. Your fairy tale wedding transportation awaits!
       </p>    </KeywordPageLayout>
-    <SiteFooter />
+    <FooterNew />
     </>
   )
 }

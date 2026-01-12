@@ -1,7 +1,7 @@
 "use client"
 
 import { KeywordPageLayout } from "@/components/keyword-page-layout"
-import { SiteFooter } from "@/components/site-footer"
+import { FooterNew } from "@/components/footer-new"
 
 export default function VintageWeddingCarHirePage() {
   return (
@@ -166,7 +166,7 @@ export default function VintageWeddingCarHirePage() {
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to arrange your <strong>vintage wedding car hire</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Excellence in every detail!
       </p>    </KeywordPageLayout>
-    <SiteFooter />
+    <FooterNew />
     </>
   )
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import { SiteFooter } from "@/components/site-footer"
+import { FooterNew } from "@/components/footer-new"
 import { KeywordPageLayout } from "@/components/keyword-page-layout"
 
 export default function VintageCarRentalPatanPage() {
@@ -95,7 +95,7 @@ export default function VintageCarRentalPatanPage() {
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> for <strong>vintage car for wedding</strong> bookings. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Premium <strong>classic car rental wedding</strong> for Patan!
       </p>    </KeywordPageLayout>
-    <SiteFooter />
+    <FooterNew />
     </>
   )
 }
