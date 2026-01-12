@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Crown, MessageCircle } from "lucide-react"
@@ -114,12 +115,16 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
           className={`absolute inset-0 transition-opacity duration-1000 ${
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
-          style={{
-            backgroundImage: `url(${slide.image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
         >
+          <Image
+            src={slide.image}
+            alt={slide.title}
+            fill
+            quality={80}
+            priority={index === 0}
+            className="object-cover"
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-[#2C1810]/95 via-[#8B4513]/60 to-[#2C1810]/40 z-10" />
           <div className="absolute inset-0 z-20 flex items-center px-3 sm:px-4 md:px-0">
             <div className="container mx-auto px-3 sm:px-4 py-4 md:py-0">

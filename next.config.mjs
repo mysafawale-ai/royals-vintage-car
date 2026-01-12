@@ -8,12 +8,20 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+    quality: 80,
   },
   compress: true,
   swcMinify: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   optimizeFonts: true,
+  reactStrictMode: true,
   
   // Optimizations for bundle size
   webpack: (config, { isServer }) => {
@@ -21,7 +29,9 @@ const nextConfig = {
       ...config.optimization,
       usedExports: true,
       sideEffects: false,
+      minimize: true,
     }
+    config.mode = 'production'
     return config
   },
   
@@ -29,6 +39,8 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-*'],
     scrollRestoration: true,
+    optimizeCss: true,
+    after: true,
   },
 
   // Headers for caching

@@ -10,12 +10,15 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
+  weight: ["400", "700"],
+  preload: true,
 })
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
+  preload: true,
 })
 
 export const viewport: Viewport = {

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Play } from "lucide-react"
 
 const galleryItems = [
@@ -64,22 +65,24 @@ export function GallerySection() {
               }}
             >
               {item.type === "image" ? (
-                <img
+                <Image
                   src={item.src}
                   alt={item.title}
+                  fill
                   loading="lazy"
-                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                  quality={75}
                 />
               ) : (
-                <img
+                <Image
                   src={item.thumbnail}
                   alt={item.title}
+                  fill
                   loading="lazy"
-                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                  quality={70}
                 />
               )}
               {item.type === "video" && (
