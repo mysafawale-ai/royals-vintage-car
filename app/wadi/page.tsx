@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarRentalWadiPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Wadi, Vadodara"
       title="Vintage Car Rental in Wadi, Vadodara"
       subtitle="Premium vintage wedding car rental and classic car wedding services in Wadi. Luxury vintage car on hire for weddings, baraat ceremonies, and celebrations."
@@ -143,8 +144,8 @@ export default function VintageCarRentalWadiPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> for <strong>vintage car for wedding</strong> bookings. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Your perfect <strong>wedding car vintage</strong> experience awaits!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

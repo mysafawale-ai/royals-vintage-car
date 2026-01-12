@@ -3,14 +3,14 @@
 import Image from "next/image"
 import { Car } from "lucide-react"
 
-// Gallery images - using actual slider images as demo
+// Gallery images - using all available images with SEO keywords
 const galleryImages = [
-  { src: "/Slider1.png", alt: "Vintage Wedding Car 1" },
-  { src: "/Slider2.png", alt: "Vintage Wedding Car 2" },
-  { src: "/Slider3.png", alt: "Vintage Wedding Car 3" },
-  { src: "/Slider1.png", alt: "Vintage Wedding Car 4" },
-  { src: "/Slider2.png", alt: "Vintage Wedding Car 5" },
-  { src: "/Slider3.png", alt: "Vintage Wedding Car 6" },
+  { src: "/luxury-vintage-rolls-royce-wedding-1.jpg", alt: "Luxury Vintage Rolls Royce Wedding Car" },
+  { src: "/classic-open-top-vintage-car-wedding-2.jpg", alt: "Classic Open Top Vintage Car Wedding" },
+  { src: "/vintage-wedding-car-decoration-3.jpg", alt: "Vintage Wedding Car Decoration" },
+  { src: "/classic-vintage-car-rental-4.jpg", alt: "Classic Vintage Car Rental" },
+  { src: "/bride-entry-vintage-car-5.jpg", alt: "Bride Entry Vintage Car" },
+  { src: "/wedding-baraat-vintage-car-6.jpg", alt: "Wedding Baraat Vintage Car" },
 ]
 
 interface KeywordPageGalleryProps {

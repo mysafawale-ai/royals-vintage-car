@@ -147,18 +147,15 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
                   <label htmlFor="city" className="block text-sm font-mono text-card-foreground mb-2">
                     City <span className="text-destructive">*</span>
                   </label>
-                  <select
+                  <Input
                     id="city"
+                    type="text"
+                    placeholder="Enter city name"
                     value={formData.city}
-                    onChange={(e) => handleCityChange(e.target.value)}
+                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                     required
-                    className="w-full bg-background border border-border text-foreground rounded-md px-3 py-2 text-sm"
-                  >
-                    <option value="">Select City</option>
-                    {Object.keys(gujaratLocations).map((city) => (
-                      <option key={city} value={city}>{city}</option>
-                    ))}
-                  </select>
+                    className="bg-background border-border text-foreground text-sm"
+                  />
                 </div>
 
                 <div>

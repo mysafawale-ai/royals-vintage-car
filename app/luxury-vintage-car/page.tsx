@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function LuxuryVintageCarPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Luxury Vintage Car"
       title="Luxury Vintage Cars for Weddings"
       subtitle="Experience unmatched elegance with our premium luxury vintage car collection. Prestige vehicles for those who demand the finest."
@@ -146,8 +147,8 @@ export default function LuxuryVintageCarPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to reserve your <strong>luxury vintage car</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Demand excellence!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

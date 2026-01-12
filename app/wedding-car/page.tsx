@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function WeddingCarPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Wedding Car Rental Gujarat"
       title="Wedding Car Rental in Gujarat"
       subtitle="Transform your wedding day with our exquisite vintage car collection. Premium wedding car services in Vadodara, Ahmedabad, Surat & across Gujarat."
@@ -124,8 +125,8 @@ export default function WeddingCarPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to book your dream <strong>wedding car</strong>. Visit our showroom at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara to see our magnificent collection in person. Your fairy tale wedding awaits!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

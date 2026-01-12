@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarRentalMakarpuraPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Makarpura, Vadodara"
       title="Vintage Car Rental in Makarpura, Vadodara"
       subtitle="Luxury vintage wedding car rental and classic car wedding services in Makarpura. Premium vintage car on hire for weddings, baraat, and special occasions."
@@ -143,8 +144,8 @@ export default function VintageCarRentalMakarpuraPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> for <strong>vintage car for wedding</strong> bookings. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Royal <strong>classic car rental wedding</strong> service for Makarpura!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

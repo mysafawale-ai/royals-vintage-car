@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function OpenTopVintageCarPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Open Top Vintage Car"
       title="Open Top Vintage Cars for Weddings"
       subtitle="Experience the ultimate grand entry with our stunning open-top vintage convertibles. Perfect for baraats and spectacular wedding arrivals."
@@ -157,8 +158,8 @@ export default function OpenTopVintageCarPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to reserve your <strong>open top vintage car</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Command attention at your wedding!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

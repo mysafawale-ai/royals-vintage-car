@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageWeddingCarRentalPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Vintage Wedding Car Rental"
       title="Vintage Wedding Car Rental"
       subtitle="Rent the wedding car of your dreams. Affordable luxury vintage car rentals with professional service across Gujarat."
@@ -168,8 +169,8 @@ export default function VintageWeddingCarRentalPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to check availability and rates for your <strong>vintage wedding car rental</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Let us make your wedding transportation dreams come true!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

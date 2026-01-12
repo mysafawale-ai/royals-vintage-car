@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarPhotoshootPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Vintage Car Photoshoot"
       title="Vintage Car Photoshoot Services"
       subtitle="Create stunning visual content with our beautiful vintage cars. Perfect for professional photography, films, and commercial shoots."
@@ -164,8 +165,8 @@ export default function VintageCarPhotoshootPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to discuss your <strong>vintage car photoshoot</strong> requirements. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Create visual excellence!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

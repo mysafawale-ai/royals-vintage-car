@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone } from "lucide-react"
 import Link from "next/link"
@@ -34,9 +35,16 @@ export function Navigation() {
       <div className="container mx-auto px-3 sm:px-4">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center pt-2">
-            <Link href="/" className={`text-sm sm:text-lg md:text-xl font-bold transition-colors duration-300 leading-tight ${isScrolled ? "text-primary" : "text-white"}`}>
-              ROYALS<br className="sm:hidden" /><span className="hidden sm:inline"> - </span>THE BARODE<br className="md:hidden" /> VINTAGE CARS
+          <div className="flex items-center pt-4 sm:pt-5">
+            <Link href="/" className="relative h-[67px] sm:h-[77px] md:h-24 w-auto flex items-center">
+              <Image
+                src="/royals-vintage-cars-logo.png"
+                alt="Royals Vintage Cars Logo"
+                height={96}
+                width={240}
+                className="h-full w-auto object-contain"
+                priority
+              />
             </Link>
           </div>
 

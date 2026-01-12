@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function ClassicCarWeddingPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Classic Car Wedding"
       title="Classic Car Wedding Services"
       subtitle="Timeless elegance meets modern celebration. Premium classic cars for weddings that embrace automotive heritage and sophistication."
@@ -148,8 +149,8 @@ export default function ClassicCarWeddingPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to explore our <strong>classic car wedding</strong> options. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Let us help you create a wedding that celebrates both your love and automotive heritage!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

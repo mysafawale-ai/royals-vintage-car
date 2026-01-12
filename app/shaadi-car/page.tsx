@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function ShaadiCarPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Shaadi Car Service"
       title="Shaadi Car Rental in Gujarat"
       subtitle="Premium vintage cars for your shaadi celebrations. Complete wedding car services for Indian matrimonial traditions."
@@ -141,8 +142,8 @@ export default function ShaadiCarPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to reserve your <strong>shaadi car</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Let us be part of your beautiful shaadi celebration!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

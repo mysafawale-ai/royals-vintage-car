@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarRentalPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Vintage Car Rental Gujarat"
       title="Vintage Car Rental in Gujarat"
       subtitle="Experience the golden era of automobiles with our premium vintage car rental service. Classic cars for weddings, photoshoots & special events across Gujarat."
@@ -145,8 +146,8 @@ export default function VintageCarRentalPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to discuss your <strong>vintage car rental</strong> requirements. Visit our facility at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara to view our magnificent collection. Let ROYALS - THE BARODE VINTAGE CARS make your next special occasion truly extraordinary!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

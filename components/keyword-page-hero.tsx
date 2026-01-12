@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
 import { Phone, Crown, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -32,8 +34,6 @@ const gujaratLocations = {
 // Hero slider images
 const heroImages = [
   "/Slider1.png",
-  "/Slider2.png", 
-  "/Slider3.png",
 ]
 
 interface KeywordPageHeroProps {
@@ -90,7 +90,24 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
   }
 
   return (
-    <section className="relative w-full min-h-[90vh] overflow-hidden pt-16 sm:pt-20">
+    <>
+      {/* Logo */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md">
+        <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-3">
+          <Link href="/" className="relative h-12 sm:h-14 md:h-16 w-auto flex items-center">
+            <Image
+              src="/royals-vintage-cars-logo.png"
+              alt="Royals Vintage Cars Logo"
+              height={64}
+              width={160}
+              className="h-full w-auto object-contain"
+              priority
+            />
+          </Link>
+        </div>
+      </div>
+
+      <section className="relative w-full min-h-[90vh] overflow-hidden pt-28 sm:pt-32 md:pt-28">
       {/* Background Image */}
       <div
         className="absolute inset-0 transition-opacity duration-1000"
@@ -107,7 +124,7 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
       <div className="relative z-20 container mx-auto px-4 py-12 md:py-20">
         <div className="grid md:grid-cols-5 gap-6 md:gap-8 items-start">
           {/* Left Side - Text Content */}
-          <div className="md:col-span-3 max-w-2xl space-y-4 md:space-y-6">
+          <div className="md:col-span-3 max-w-2xl space-y-4 sm:space-y-5 md:space-y-6">
             <div className="flex items-center gap-2 text-secondary">
               <Crown className="w-4 h-4 md:w-5 md:h-5" />
               <span className="text-xs font-mono uppercase tracking-wider">{badge}</span>
@@ -189,17 +206,14 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
                 <label className="block text-xs font-mono text-card-foreground mb-1">
                   City <span className="text-destructive">*</span>
                 </label>
-                <select
+                <Input
+                  type="text"
+                  placeholder="Enter city name"
                   value={formData.city}
-                  onChange={(e) => handleCityChange(e.target.value)}
+                  onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                   required
-                  className="w-full bg-background border border-border text-foreground rounded-md px-3 py-2 text-sm h-9"
-                >
-                  <option value="">Select City</option>
-                  {Object.keys(gujaratLocations).map((city) => (
-                    <option key={city} value={city}>{city}</option>
-                  ))}
-                </select>
+                  className="w-full bg-background border-border text-foreground rounded-md px-3 py-2 text-sm h-9"
+                />
               </div>
 
               <div>
@@ -241,5 +255,6 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
         ))}
       </div>
     </section>
+    </>
   )
 }

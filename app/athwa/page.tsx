@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarRentalAthwaPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Athwa, Surat"
       title="Vintage Car Rental in Athwa, Surat"
       subtitle="Premium vintage car rental and classic car wedding services in Athwa. Luxury vintage wedding car hire, Rolls Royce rental, and complete wedding vintage car rental service."
@@ -143,8 +144,8 @@ export default function VintageCarRentalAthwaPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> for <strong>vintage car for wedding</strong> bookings. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Heritage <strong>classic car rental wedding</strong> for Athwa!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

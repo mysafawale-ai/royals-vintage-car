@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function WeddingVintageCarOnRentPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Wedding Vintage Car on Rent"
       title="Wedding Vintage Car on Rent"
       subtitle="Magnificent vintage cars available on rent for weddings. Flexible rental options for your special celebration needs."
@@ -167,8 +168,8 @@ export default function WeddingVintageCarOnRentPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to explore <strong>wedding vintage car on rent</strong> options. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Flexible rental solutions!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

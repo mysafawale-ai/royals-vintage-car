@@ -163,18 +163,15 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
               <Label htmlFor="city" className="font-mono">
                 City <span className="text-destructive">*</span>
               </Label>
-              <select
+              <Input
                 id="city"
+                type="text"
+                placeholder="Enter city name"
                 value={formData.city}
-                onChange={(e) => handleCityChange(e.target.value)}
+                onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                 required
                 className="w-full bg-white border border-gray-300 text-foreground rounded-md px-3 py-2 text-sm font-mono"
-              >
-                <option value="">Select City</option>
-                {Object.keys(gujaratLocations).map((city) => (
-                  <option key={city} value={city}>{city}</option>
-                ))}
-              </select>
+              />
             </div>
 
             <div className="space-y-2">

@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarRentalStatueOfUnityPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Statue of Unity, Gujarat"
       title="Vintage Car Rental at Statue of Unity"
       subtitle="Premium vintage car rental and classic car wedding services at India's iconic Statue of Unity. Luxury vintage wedding car hire, Rolls Royce rental, and complete wedding vintage car rental service for world-class celebrations."
@@ -143,8 +144,8 @@ export default function VintageCarRentalStatueOfUnityPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> for <strong>vintage car for wedding</strong> bookings. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. World-class <strong>classic car rental wedding</strong> at the Statue of Unity!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

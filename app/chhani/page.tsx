@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarRentalChhaniPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Chhani, Vadodara"
       title="Vintage Car Rental in Chhani, Vadodara"
       subtitle="Premium vintage car rental and classic car wedding services in Chhani. Luxury vintage wedding car hire for weddings, baraat, and special celebrations."
@@ -143,8 +144,8 @@ export default function VintageCarRentalChhaniPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> for <strong>vintage car for wedding</strong> bookings. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Premium <strong>wedding car vintage</strong> for Chhani celebrations!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

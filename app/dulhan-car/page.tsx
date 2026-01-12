@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function DulhanCarPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Dulhan Car Service"
       title="Dulhan Car Service in Gujarat"
       subtitle="Every bride deserves a royal entrance. Premium vintage dulhan cars for the most important journey of her life."
@@ -153,8 +154,8 @@ export default function DulhanCarPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to reserve your <strong>dulhan car</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Give the bride the royal treatment she deserves!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

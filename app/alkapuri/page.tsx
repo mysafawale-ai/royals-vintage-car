@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarRentalAlkapuriPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Alkapuri, Vadodara"
       title="Vintage Car Rental in Alkapuri, Vadodara"
       subtitle="Premium vintage car rental and classic car wedding services in Alkapuri. Luxury vintage wedding car hire, Rolls Royce rental, and complete wedding vintage car rental service."
@@ -143,8 +144,8 @@ export default function VintageCarRentalAlkapuriPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Visit us at <strong>Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara 390007</strong> or call <strong>+91 88306 12287</strong>. Email <strong>info@royalsvintagecar.com</strong> for <strong>vintage car for wedding</strong> bookings. ROYALS - THE BARODE VINTAGE CARS: Alkapuri's premier <strong>classic car rental wedding</strong> destination!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

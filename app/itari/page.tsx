@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarRentalItariPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Itari, Vadodara"
       title="Vintage Car Rental in Itari, Vadodara"
       subtitle="Premium vintage car rental and classic car wedding services in Itari. Luxury vintage car on hire for weddings, baraat, and special celebrations."
@@ -136,8 +137,8 @@ export default function VintageCarRentalItariPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> for <strong>vintage car for wedding</strong> bookings. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Your dream <strong>classic car rental wedding</strong> awaits!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

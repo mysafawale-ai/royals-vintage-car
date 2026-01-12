@@ -136,8 +136,8 @@ export function AboutSection() {
         <div className="mt-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="/3d model.png"
-              alt="Vintage Car Collection"
+              src="/classic-vintage-wedding-car-collection.jpg"
+              alt="Classic Vintage Wedding Car Collection"
               className="rounded-lg w-full object-cover aspect-square"
             />
           </div>

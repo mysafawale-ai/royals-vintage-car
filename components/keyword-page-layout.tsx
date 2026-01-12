@@ -16,18 +16,18 @@ const gujaratLocations = {
   "Other Cities": ["Anand", "Nadiad", "Bharuch", "Ankleshwar", "Navsari", "Valsad", "Gandhinagar", "Mehsana", "Rajkot"]
 }
 
-const heroImages = ["/Slider1.png", "/Slider2.png", "/Slider3.png"]
+const heroImages = ["/Slider1.png"]
 
 const galleryImages = [
-  { src: "/Slider1.png", alt: "Vintage Wedding Car", type: "image" },
-  { src: "/Slider2.png", alt: "Rolls Royce Wedding", type: "image" },
-  { src: "/Slider3.png", alt: "Classic Car Wedding", type: "image" },
+  { src: "/elegant-vintage-wedding-car-7.jpg", alt: "Elegant Vintage Wedding Car", type: "image" },
+  { src: "/luxury-vintage-car-hire-wedding-8.jpg", alt: "Luxury Vintage Car Hire Wedding", type: "image" },
+  { src: "/vintage-car-rental-vadodara-9.jpg", alt: "Vintage Car Rental Vadodara", type: "image" },
 ]
 
 const galleryVideos = [
-  { src: "https://www.youtube.com/embed/dQw4w9WgXcQ", title: "Vintage Car Wedding Entry" },
-  { src: "https://www.youtube.com/embed/ZbZSe6N_BXs", title: "Classic Car Baraat" },
-  { src: "https://www.youtube.com/embed/9bZkp7q19f0", title: "Royal Wedding Car Decoration" },
+  { src: "/elegant-vintage-wedding-car-ride-video.mp4", title: "Elegant Vintage Wedding Car Ride" },
+  { src: "/classic-car-wedding-celebration-video.mp4", title: "Classic Car Wedding Celebration" },
+  { src: "/vintage-wedding-car-grandeur-video.mp4", title: "Vintage Wedding Car Grandeur" },
 ]
 
 interface KeywordPageLayoutProps {
@@ -83,14 +83,30 @@ export function KeywordPageLayout({
 
   return (
     <main className="min-h-screen bg-background">
+      {/* Logo */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md">
+        <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-3">
+          <Link href="/" className="relative h-12 sm:h-14 md:h-16 w-auto flex items-center">
+            <Image
+              src="/royals-vintage-cars-logo.png"
+              alt="Royals Vintage Cars Logo"
+              height={64}
+              width={160}
+              className="h-full w-auto object-contain"
+              priority
+            />
+          </Link>
+        </div>
+      </div>
+
       {/* Hero Section with Form */}
-      <section className="relative w-full min-h-[90vh] overflow-hidden pt-16 sm:pt-20">
+      <section className="relative w-full min-h-[90vh] overflow-hidden pt-28 sm:pt-32 md:pt-28">
         <div className="absolute inset-0 transition-opacity duration-1000" style={{ backgroundImage: `url(${heroImages[currentImage]})`, backgroundSize: "cover", backgroundPosition: "center" }}>
           <div className="absolute inset-0 bg-gradient-to-r from-[#2C1810]/95 via-[#8B4513]/60 to-[#2C1810]/40" />
         </div>
         <div className="relative z-20 container mx-auto px-4 py-12 md:py-20">
           <div className="grid md:grid-cols-5 gap-6 md:gap-8 items-start">
-            <div className="md:col-span-3 max-w-2xl space-y-4 md:space-y-6">
+            <div className="md:col-span-3 max-w-2xl space-y-4 sm:space-y-5 md:space-y-6">
               <div className="flex items-center gap-2 text-secondary">
                 <Crown className="w-4 h-4 md:w-5 md:h-5" />
                 <span className="text-xs font-mono uppercase tracking-wider">{badge}</span>
@@ -125,10 +141,7 @@ export function KeywordPageLayout({
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-card-foreground mb-1">City <span className="text-destructive">*</span></label>
-                  <select value={formData.city} onChange={(e) => { setSelectedCity(e.target.value); setFormData({ ...formData, city: e.target.value }) }} required className="w-full bg-background border border-border rounded-md px-3 py-2 text-sm h-9">
-                    <option value="">Select City</option>
-                    {Object.keys(gujaratLocations).map((city) => (<option key={city} value={city}>{city}</option>))}
-                  </select>
+                  <Input type="text" placeholder="Enter city name" value={formData.city} onChange={(e) => setFormData({ ...formData, city: e.target.value })} required className="w-full bg-background border border-border rounded-md px-3 py-2 text-sm h-9" />
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-card-foreground mb-1">Car Type <span className="text-muted-foreground text-xs">(Optional)</span></label>
@@ -223,12 +236,12 @@ export function KeywordPageLayout({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {galleryVideos.map((video, index) => (
                 <div key={index} className="aspect-video relative rounded-lg overflow-hidden bg-black/20">
-                  <iframe
+                  <video
                     src={video.src}
                     title={video.title}
-                    className="absolute inset-0 w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                    className="absolute inset-0 w-full h-full object-cover"
+                    controls
+                    controlsList="nodownload"
                   />
                 </div>
               ))}

@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarRentalRanoliPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Ranoli, Vadodara"
       title="Vintage Car Rental in Ranoli, Vadodara"
       subtitle="Vintage car services for Ranoli's developing community. Classic automobiles for weddings and celebrations on Vadodara's expanding eastern frontier."
@@ -153,8 +154,8 @@ export default function VintageCarRentalRanoliPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> for <strong>vintage car rental Ranoli</strong> services. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Classic style for the developing frontier!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

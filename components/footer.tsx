@@ -150,33 +150,73 @@ export function Footer() {
         {/* Service Areas - Vadodara */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <h4 className="text-xl font-bold mb-4 text-center text-secondary">Vintage Car Rental in Vadodara Areas</h4>
-          <p className="text-center text-primary-foreground/80 font-mono text-sm leading-relaxed">
-            {vadodaraAreas.join(" • ")}
-          </p>
+          <div className="text-center text-primary-foreground/80 font-mono text-sm leading-relaxed flex flex-wrap justify-center gap-x-2 gap-y-1">
+            {vadodaraAreas.map((area, index) => (
+              <span key={area} className="inline-flex items-center">
+                <Link 
+                  href={`/${area.toLowerCase().replace(/ /g, "-")}`}
+                  className="text-primary-foreground/80 hover:text-secondary transition-colors underline underline-offset-2"
+                >
+                  {area}
+                </Link>
+                {index < vadodaraAreas.length - 1 && <span className="text-secondary mx-1">•</span>}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Service Areas - Ahmedabad */}
         <div className="mt-8 pt-6 border-t border-primary-foreground/10">
           <h4 className="text-lg font-bold mb-3 text-center text-secondary">Wedding Car Rental in Ahmedabad</h4>
-          <p className="text-center text-primary-foreground/80 font-mono text-sm leading-relaxed">
-            {ahmedabadAreas.join(" • ")}
-          </p>
+          <div className="text-center text-primary-foreground/80 font-mono text-sm leading-relaxed flex flex-wrap justify-center gap-x-2 gap-y-1">
+            {ahmedabadAreas.map((area, index) => (
+              <span key={area} className="inline-flex items-center">
+                <Link 
+                  href={`/${area.toLowerCase().replace(/ /g, "-")}`}
+                  className="text-primary-foreground/80 hover:text-secondary transition-colors underline underline-offset-2"
+                >
+                  {area}
+                </Link>
+                {index < ahmedabadAreas.length - 1 && <span className="text-secondary mx-1">•</span>}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Service Areas - Surat */}
         <div className="mt-8 pt-6 border-t border-primary-foreground/10">
           <h4 className="text-lg font-bold mb-3 text-center text-secondary">Vintage Car Hire in Surat</h4>
-          <p className="text-center text-primary-foreground/80 font-mono text-sm leading-relaxed">
-            {suratAreas.join(" • ")}
-          </p>
+          <div className="text-center text-primary-foreground/80 font-mono text-sm leading-relaxed flex flex-wrap justify-center gap-x-2 gap-y-1">
+            {suratAreas.map((area, index) => (
+              <span key={area} className="inline-flex items-center">
+                <Link 
+                  href={`/${area.toLowerCase().replace(/ /g, "-")}`}
+                  className="text-primary-foreground/80 hover:text-secondary transition-colors underline underline-offset-2"
+                >
+                  {area}
+                </Link>
+                {index < suratAreas.length - 1 && <span className="text-secondary mx-1">•</span>}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Other Cities */}
         <div className="mt-8 pt-6 border-t border-primary-foreground/10">
           <h4 className="text-lg font-bold mb-3 text-center text-secondary">Other Gujarat Cities We Serve</h4>
-          <p className="text-center text-primary-foreground/80 font-mono text-sm leading-relaxed">
-            {otherCities.join(" • ")}
-          </p>
+          <div className="text-center text-primary-foreground/80 font-mono text-sm leading-relaxed flex flex-wrap justify-center gap-x-2 gap-y-1">
+            {otherCities.map((city, index) => (
+              <span key={city} className="inline-flex items-center">
+                <Link 
+                  href={`/${city.toLowerCase().replace(/ /g, "-").replace("/", "-")}`}
+                  className="text-primary-foreground/80 hover:text-secondary transition-colors underline underline-offset-2"
+                >
+                  {city}
+                </Link>
+                {index < otherCities.length - 1 && <span className="text-secondary mx-1">•</span>}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* All Service Pages Links */}

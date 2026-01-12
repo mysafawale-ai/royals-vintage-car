@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function RollsRoyceWeddingPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Rolls Royce Wedding Car"
       title="Rolls Royce Style Wedding Cars"
       subtitle="Experience the ultimate in wedding luxury with our Rolls Royce style vintage cars. The epitome of elegance for weddings across Gujarat."
@@ -141,8 +142,8 @@ export default function RollsRoyceWeddingPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to reserve your <strong>Rolls Royce style wedding car</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara to experience the majesty of our collection. Because your wedding deserves nothing less than Rolls Royce excellence!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

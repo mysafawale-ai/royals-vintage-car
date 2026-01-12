@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function BaraatCarPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Baraat Car Service"
       title="Baraat Car Service in Gujarat"
       subtitle="Make the groom's wedding procession legendary with our spectacular baraat cars. Open-top vintage cars & classic automobiles for unforgettable baraats."
@@ -136,8 +137,8 @@ export default function BaraatCarPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to reserve your <strong>baraat car</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara to see our impressive baraat car collection. Make your groom's arrival the most talked-about moment of your wedding!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

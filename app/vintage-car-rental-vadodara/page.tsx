@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageCarRentalVadodaraPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Vintage Car Rental Vadodara"
       title="Vintage Car Rental in Vadodara"
       subtitle="Vadodara's premier vintage car rental service. Local expertise, magnificent vehicles, and unmatched service in the cultural capital of Gujarat."
@@ -142,8 +143,8 @@ export default function VintageCarRentalVadodaraPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to book your <strong>vintage car rental Vadodara</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara 390007. Your local vintage car specialists!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

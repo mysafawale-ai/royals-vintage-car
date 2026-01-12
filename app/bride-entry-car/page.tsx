@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function BrideEntryCarPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Bride Entry Car"
       title="Bride Entry Car in Gujarat"
       subtitle="Make the bride's arrival unforgettable with our elegant vintage cars. Creating magical bridal entries across Vadodara, Ahmedabad & Surat."
@@ -153,8 +154,8 @@ export default function BrideEntryCarPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to reserve your perfect <strong>bride entry car</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Make her entrance unforgettable!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

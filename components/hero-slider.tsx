@@ -42,14 +42,14 @@ const slides = [
     title: "Rolls Royce & Classic Vintage Collection",
     subtitle: "Timeless Elegance for Your Shaadi",
     description: "Experience royal grandeur with our stunning Rolls Royce and open top vintage cars. The perfect ride for bride, groom & wedding celebrations.",
-    image: "/Slider2.png",
+    image: "/Slider1.png",
   },
   {
     id: 3,
     title: "Wedding Vintage Car Delivery Across Gujarat",
     subtitle: "From Vadodara to Your Wedding Venue",
     description: "We deliver premium vintage wedding cars to all major cities including Ahmedabad, Surat, Anand, Bharuch, Gandhinagar and surrounding areas.",
-    image: "/Slider3.png",
+    image: "/Slider1.png",
   },
 ]
 
@@ -107,7 +107,7 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
   }
 
   return (
-    <section id="home" className="relative w-full min-h-screen md:h-screen sm:h-[600px] xs:h-screen overflow-hidden pt-16 sm:pt-20">
+    <section id="home" className="relative w-full min-h-screen md:h-screen sm:h-[600px] xs:h-screen overflow-hidden pt-56 sm:pt-64 md:pt-56">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -125,7 +125,7 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
             <div className="container mx-auto px-3 sm:px-4 py-4 md:py-0">
               <div className="grid md:grid-cols-5 gap-3 md:gap-6 items-start">
                 {/* Left Side - Text Content */}
-                <div className="md:col-span-3 max-w-2xl space-y-2 md:space-y-6">
+                <div className="md:col-span-3 max-w-2xl space-y-3 sm:space-y-4 md:space-y-6 pt-8 sm:pt-10 md:pt-12">
                   <div className="flex items-center gap-2 text-secondary">
                     <Crown className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                     <span className="text-xs font-mono uppercase tracking-wider">{slide.subtitle}</span>
@@ -203,18 +203,15 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
                       <label htmlFor="city" className="block text-xs font-mono text-card-foreground mb-1">
                         City <span className="text-destructive">*</span>
                       </label>
-                      <select
+                      <Input
                         id="city"
+                        type="text"
+                        placeholder="Enter city name"
                         value={formData.city}
-                        onChange={(e) => handleCityChange(e.target.value)}
+                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                         required
-                        className="w-full bg-background border border-border text-foreground rounded-md px-2 py-1 text-xs h-8"
-                      >
-                        <option value="">Select City</option>
-                        {Object.keys(gujaratLocations).map((city) => (
-                          <option key={city} value={city}>{city}</option>
-                        ))}
-                      </select>
+                        className="bg-background border-border text-foreground text-xs h-8"
+                      />
                     </div>
 
                     <div>

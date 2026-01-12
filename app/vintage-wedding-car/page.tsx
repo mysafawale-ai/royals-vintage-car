@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function VintageWeddingCarPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Vintage Wedding Car"
       title="Vintage Wedding Car in Gujarat"
       subtitle="Step into a fairy tale with our magnificent vintage wedding cars. Premium classic automobiles for the wedding of your dreams."
@@ -143,8 +144,8 @@ export default function VintageWeddingCarPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to book your <strong>vintage wedding car</strong>. Visit our showroom at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara to fall in love with our collection. Your fairy tale wedding transportation awaits!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }

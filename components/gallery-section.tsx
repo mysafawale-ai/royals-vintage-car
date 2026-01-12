@@ -1,30 +1,55 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Play } from "lucide-react"
+import { generateVideoThumbnail } from "@/lib/video-thumbnail"
 
 const galleryItems = [
-  { id: 1, type: "image", src: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&h=600&fit=crop", title: "Vintage Rolls Royce Wedding Car" },
-  { id: 2, type: "video", src: "https://www.youtube.com/embed/dQw4w9WgXcQ", thumbnail: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=600&fit=crop", title: "Classic Open Top Vintage" },
-  { id: 3, type: "image", src: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&h=600&fit=crop", title: "Royal Baraat Car" },
-  { id: 4, type: "image", src: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=600&h=600&fit=crop", title: "Decorated Wedding Vintage" },
-  { id: 5, type: "video", src: "https://www.youtube.com/embed/dQw4w9WgXcQ", thumbnail: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=600&fit=crop", title: "Bride & Groom Car" },
-  { id: 6, type: "image", src: "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=600&h=600&fit=crop", title: "Vintage Car Vadodara" },
-  { id: 7, type: "image", src: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&h=600&fit=crop", title: "Wedding Car Ahmedabad" },
-  { id: 8, type: "video", src: "https://www.youtube.com/embed/dQw4w9WgXcQ", thumbnail: "https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=600&h=600&fit=crop", title: "Classic Car Surat" },
-  { id: 9, type: "image", src: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&h=600&fit=crop", title: "Luxury Vintage Wedding" },
-  { id: 10, type: "image", src: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&h=600&fit=crop", title: "Antique Wedding Car" },
-  { id: 11, type: "image", src: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=600&fit=crop", title: "Open Vintage Car Wedding" },
-  { id: 12, type: "image", src: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&h=600&fit=crop", title: "Shaadi Vintage Car" },
+  // Photos
+  { id: 1, type: "image", src: "/luxury-vintage-rolls-royce-wedding-1.jpg", thumbnail: "/luxury-vintage-rolls-royce-wedding-1.jpg", title: "Luxury Vintage Rolls Royce Wedding" },
+  { id: 2, type: "image", src: "/classic-open-top-vintage-car-wedding-2.jpg", thumbnail: "/classic-open-top-vintage-car-wedding-2.jpg", title: "Classic Open Top Vintage Car" },
+  { id: 3, type: "image", src: "/vintage-wedding-car-decoration-3.jpg", thumbnail: "/vintage-wedding-car-decoration-3.jpg", title: "Vintage Wedding Car Decoration" },
+  { id: 4, type: "image", src: "/classic-vintage-car-rental-4.jpg", thumbnail: "/classic-vintage-car-rental-4.jpg", title: "Classic Vintage Car Rental" },
+  { id: 5, type: "image", src: "/bride-entry-vintage-car-5.jpg", thumbnail: "/bride-entry-vintage-car-5.jpg", title: "Bride Entry Vintage Car" },
+  { id: 6, type: "image", src: "/wedding-baraat-vintage-car-6.jpg", thumbnail: "/wedding-baraat-vintage-car-6.jpg", title: "Wedding Baraat Vintage Car" },
+  // Videos - thumbnails will be generated from videos
+  { id: 7, type: "video", src: "/vintage-rolls-royce-wedding-car-video-1.mp4", thumbnail: null, title: "Vintage Rolls Royce Wedding Car Video" },
+  { id: 8, type: "video", src: "/classic-open-top-vintage-wedding-video-2.mp4", thumbnail: null, title: "Classic Open Top Vintage Video" },
+  { id: 9, type: "video", src: "/vintage-baraat-car-wedding-video-3.mp4", thumbnail: null, title: "Royal Baraat Car Video" },
+  { id: 10, type: "video", src: "/luxury-vintage-wedding-car-decoration-4.mp4", thumbnail: null, title: "Decorated Wedding Vintage Video" },
+  { id: 11, type: "video", src: "/wedding-vintage-car-rental-video-5.mp4", thumbnail: null, title: "Bride & Groom Car Video" },
+  { id: 12, type: "video", src: "/elegant-vintage-wedding-car-ride-video.mp4", thumbnail: null, title: "Elegant Wedding Car Ride Video" },
 ]
 
 export function GallerySection() {
-  const [selectedFilter, setSelectedFilter] = useState<"all" | "image" | "video">("all")
+  const [selectedFilter, setSelectedFilter] = useState<"all" | "video">("all")
   const [showAll, setShowAll] = useState(false)
   const [activeVideo, setActiveVideo] = useState<string | null>(null)
+  const [activeImage, setActiveImage] = useState<{type: string, src: string} | null>(null)
+  const [thumbnails, setThumbnails] = useState<Record<string, string>>({})
 
-  const filteredItems =
-    selectedFilter === "all" ? galleryItems : galleryItems.filter((item) => item.type === selectedFilter)
+  // Generate thumbnails for videos on component mount
+  useEffect(() => {
+    const generateThumbnails = async () => {
+      const videoItems = galleryItems.filter(item => item.type === "video")
+      const newThumbnails: Record<string, string> = {}
+
+      for (const item of videoItems) {
+        try {
+          const thumb = await generateVideoThumbnail(item.src, 2)
+          newThumbnails[item.src] = thumb
+        } catch (error) {
+          console.error(`Failed to generate thumbnail for ${item.src}:`, error)
+        }
+      }
+
+      setThumbnails(newThumbnails)
+    }
+
+    generateThumbnails()
+  }, [])
+
+  const filteredItems = galleryItems
   
   const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 12)
 
@@ -44,13 +69,11 @@ export function GallerySection() {
         {/* Filter Tabs */}
         <div className="flex justify-center gap-4 mb-8">
           {[
-            { key: "all", label: "All" },
-            { key: "image", label: "Photos" },
-            { key: "video", label: "Videos" },
+            { key: "all", label: "All Videos" },
           ].map((filter) => (
             <button
               key={filter.key}
-              onClick={() => setSelectedFilter(filter.key as "all" | "image" | "video")}
+              onClick={() => setSelectedFilter(filter.key as "all" | "video")}
               className={`px-6 py-2 rounded-full font-mono text-sm transition-all ${
                 selectedFilter === filter.key
                   ? "bg-secondary text-white"
@@ -68,13 +91,27 @@ export function GallerySection() {
             <div
               key={item.id}
               className="group relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all cursor-pointer border-2 border-transparent hover:border-secondary"
-              onClick={() => item.type === "video" && setActiveVideo(item.src)}
+              onClick={() => {
+                if (item.type === "video") {
+                  setActiveVideo(item.src)
+                } else {
+                  setActiveImage({ type: item.type, src: item.src })
+                }
+              }}
             >
-              <img
-                src={item.type === "video" ? item.thumbnail : item.src}
-                alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
+              {item.type === "image" ? (
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              ) : (
+                <img
+                  src={thumbnails[item.src] || item.thumbnail || item.src}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              )}
               {item.type === "video" && (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-16 h-16 bg-secondary/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -87,6 +124,9 @@ export function GallerySection() {
                   <h3 className="text-white font-bold text-sm md:text-lg">{item.title}</h3>
                   {item.type === "video" && (
                     <span className="text-secondary text-xs font-mono">▶ Click to play</span>
+                  )}
+                  {item.type === "image" && (
+                    <span className="text-secondary text-xs font-mono">🔍 Click to view</span>
                   )}
                 </div>
               </div>
@@ -134,11 +174,32 @@ export function GallerySection() {
             >
               <span className="text-lg font-mono">✕ Close</span>
             </button>
-            <iframe
+            <video
               src={activeVideo}
               className="w-full h-full rounded-lg"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+              controls
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Image Modal */}
+      {activeImage && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setActiveImage(null)}
+        >
+          <div className="relative w-full max-w-4xl max-h-[90vh] flex items-center justify-center">
+            <button
+              onClick={() => setActiveImage(null)}
+              className="absolute -top-12 right-0 text-white hover:text-secondary transition-colors"
+            >
+              <span className="text-lg font-mono">✕ Close</span>
+            </button>
+            <img
+              src={activeImage.src}
+              alt="Gallery Image"
+              className="w-full h-full object-contain rounded-lg"
             />
           </div>
         </div>

@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer"
 
 export default function DoliCarPage() {
   return (
-    <KeywordPageLayout
+    <>
+      <KeywordPageLayout
       badge="Doli Car"
       title="Doli Car Services in Gujarat"
       subtitle="Modern elegance for the traditional doli. Vintage cars that honor tradition while providing comfort and style for the bride's journey."
@@ -152,8 +153,8 @@ export default function DoliCarPage() {
 
       <p className="leading-relaxed mb-8 text-lg font-medium">
         Contact us today at <strong>+91 88306 12287</strong> or email <strong>info@royalsvintagecar.com</strong> to reserve your <strong>doli car</strong>. Visit ROYALS - THE BARODE VINTAGE CARS at Windsor Plaza, RC Dutt Road, Alkapuri, Vadodara. Honor tradition with elegance!
-      </p>
-      <SiteFooter />
-    </KeywordPageLayout>
+      </p>    </KeywordPageLayout>
+    <SiteFooter />
+    </>
   )
 }
