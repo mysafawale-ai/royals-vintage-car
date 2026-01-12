@@ -8,7 +8,9 @@ Disallow: /_next/
 Disallow: /api/
 Disallow: /.git
 Disallow: /.env
-Disallow: *.json
+
+# Allow sitemap
+Allow: /sitemap.xml
 
 # Google specific
 User-agent: Googlebot

@@ -106,44 +106,99 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
-        "@id": "https://royalsvintagecars.com/#organization",
+        "@type": "WebSite",
+        "@id": "https://royalsvintagecars.com/#website",
+        url: "https://royalsvintagecars.com",
         name: "ROYALS - THE BARODE VINTAGE CARS",
-        image: "https://royalsvintagecars.com/logo.png",
+        description: "Premium vintage car rental for weddings in Gujarat",
+        publisher: {
+          "@id": "https://royalsvintagecars.com/#organization"
+        },
+        inLanguage: "en-IN",
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://royalsvintagecars.com/#localbusiness",
+        name: "ROYALS - THE BARODE VINTAGE CARS",
+        image: {
+          "@type": "ImageObject",
+          url: "https://royalsvintagecars.com/royals-vintage-cars-logo.png",
+          width: 512,
+          height: 512,
+        },
         description: "Premium vintage car rental for weddings in Vadodara, Ahmedabad, Surat and across Gujarat. Luxury Rolls Royce, open top vintage cars for shaadi, baraat & marriage ceremonies.",
         url: "https://royalsvintagecars.com",
-        telephone: "+91 88306 12287",
+        telephone: "+918830612287",
         email: "info@royalsvintagecar.com",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Baroda",
+          streetAddress: "Windsor Plaza, RC Dutt Road, Alkapuri",
           addressLocality: "Vadodara",
           addressRegion: "Gujarat",
-          postalCode: "390001",
+          postalCode: "390007",
           addressCountry: "IN",
         },
-        sameAs: [],
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "22.3072",
+          longitude: "73.1812",
+        },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "21:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Saturday", "Sunday"],
+            opens: "10:00",
+            closes: "22:00",
+          },
+        ],
+        sameAs: [
+          "https://www.facebook.com/royalsvintagecars",
+          "https://www.instagram.com/royalsvintagecars",
+        ],
         priceRange: "₹₹₹",
-        serviceArea: [
+        areaServed: [
           { "@type": "City", name: "Vadodara" },
           { "@type": "City", name: "Ahmedabad" },
           { "@type": "City", name: "Surat" },
           { "@type": "State", name: "Gujarat" },
         ],
-        areaServed: [
-          "Vadodara", "Ahmedabad", "Surat", "Anand", "Nadiad", "Bharuch", "Gandhinagar", 
-          "Gotri", "Alkapuri", "Akota", "Sayajigunj", "Fatehgunj", "Sevasi", "Manjalpur",
-          "Ellora Park", "Waghodia Road", "Vasna Bhayali", "Karelibaug", "Raopura", "Nizampura"
-        ],
+        aggregateRating: {
+          "@type": "AggregateRating",
+          itemReviewed: {
+            "@type": "LocalBusiness",
+            name: "ROYALS - THE BARODE VINTAGE CARS",
+          },
+          ratingValue: "4.9",
+          reviewCount: "250",
+          bestRating: "5",
+          worstRating: "1",
+        },
       },
       {
         "@type": "Organization",
         "@id": "https://royalsvintagecars.com/#organization",
         name: "ROYALS - THE BARODE VINTAGE CARS",
         url: "https://royalsvintagecars.com",
-        logo: "https://royalsvintagecars.com/logo.png",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://royalsvintagecars.com/royals-vintage-cars-logo.png",
+          width: 512,
+          height: 512,
+        },
         foundingDate: "2020",
-        founders: [{ "@type": "Person", name: "ROYALS Team" }],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+918830612287",
+          contactType: "customer service",
+          areaServed: "IN",
+          availableLanguage: ["English", "Hindi", "Gujarati"],
+        },
         knowsAbout: [
           "Vintage Car Rental",
           "Wedding Car Rental",
@@ -157,36 +212,61 @@ export default function RootLayout({
         "@type": "Service",
         "@id": "https://royalsvintagecars.com/#service-wedding",
         name: "Vintage Wedding Car Rental",
+        serviceType: "Car Rental",
         description: "Premium vintage car rental service for weddings including Rolls Royce, open top vintage cars for baraat, vidaai and wedding ceremonies",
         provider: {
           "@id": "https://royalsvintagecars.com/#organization",
         },
-        areaServed: ["Vadodara", "Ahmedabad", "Surat", "Gujarat"],
-        priceRange: "₹₹₹",
+        areaServed: [
+          { "@type": "City", name: "Vadodara" },
+          { "@type": "City", name: "Ahmedabad" },
+          { "@type": "City", name: "Surat" },
+        ],
+        offers: {
+          "@type": "Offer",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "INR",
+            minPrice: "15000",
+          },
+          availability: "https://schema.org/InStock",
+        },
       },
       {
         "@type": "Service",
         "@id": "https://royalsvintagecars.com/#service-baraat",
         name: "Vintage Baraat Car Rental",
+        serviceType: "Car Rental",
         description: "Luxury vintage cars for baraat and groom entry. Make your wedding grand with our classic vintage car collection",
         provider: {
           "@id": "https://royalsvintagecars.com/#organization",
         },
-        areaServed: ["Vadodara", "Ahmedabad", "Surat", "Gujarat"],
-        priceRange: "₹₹₹",
+        areaServed: [
+          { "@type": "City", name: "Vadodara" },
+          { "@type": "City", name: "Ahmedabad" },
+          { "@type": "City", name: "Surat" },
+        ],
+        offers: {
+          "@type": "Offer",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            priceCurrency: "INR",
+            minPrice: "15000",
+          },
+          availability: "https://schema.org/InStock",
+        },
       },
       {
-        "@type": "AggregateRating",
-        "@id": "https://royalsvintagecars.com/#rating",
-        itemReviewed: {
-          "@type": "LocalBusiness",
-          name: "ROYALS - THE BARODE VINTAGE CARS",
-          url: "https://royalsvintagecars.com",
-        },
-        ratingValue: "4.9",
-        ratingCount: "250",
-        bestRating: "5",
-        worstRating: "1",
+        "@type": "BreadcrumbList",
+        "@id": "https://royalsvintagecars.com/#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://royalsvintagecars.com",
+          },
+        ],
       },
     ],
   }
