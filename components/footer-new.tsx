@@ -175,7 +175,7 @@ export function FooterNew() {
 
         {/* Bottom */}
         <div className="text-center text-xs text-white/60">
-          <p>© 2024 ROYALS - THE BARODE VINTAGE CARS. All rights reserved.</p>
+          <p>© 2026 ROYALS - THE BARODE VINTAGE CARS. All rights reserved.</p>
         </div>
       </div>
     </footer>
