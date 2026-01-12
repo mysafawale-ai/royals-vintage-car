@@ -114,8 +114,8 @@ export default function RootLayout({
         image: "https://royalsvintagecars.com/logo.png",
         description: "Premium vintage car rental for weddings in Vadodara, Ahmedabad, Surat and across Gujarat. Luxury Rolls Royce, open top vintage cars for shaadi, baraat & marriage ceremonies.",
         url: "https://royalsvintagecars.com",
-        telephone: "+919876543210",
-        email: "info@royalsvintagecars.com",
+        telephone: "+91 88306 12287",
+        email: "info@royalsvintagecar.com",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Baroda",
