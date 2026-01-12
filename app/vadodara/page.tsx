@@ -1,4 +1,10 @@
-"use client"
+/**
+ * SSG (Static Site Generation) Page
+ * Pre-rendered at build time for maximum performance
+ * Revalidates every 24 hours for fresh content
+ */
+
+export const revalidate = 86400 // Revalidate every 24 hours (in seconds)
 
 import { KeywordPageLayout } from "@/components/keyword-page-layout"
 import { FooterNew } from "@/components/footer-new"

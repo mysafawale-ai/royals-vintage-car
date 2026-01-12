@@ -1,3 +1,11 @@
+/**
+ * SSG (Static Site Generation) Page
+ * Pre-rendered at build time for maximum performance
+ * Revalidates every 24 hours for fresh content
+ */
+
+export const revalidate = 86400 // Revalidate every 24 hours
+
 'use client'
 
 import { useState, useEffect } from 'react'
