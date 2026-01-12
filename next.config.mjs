@@ -19,16 +19,6 @@ const nextConfig = {
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
   reactStrictMode: true,
-  
-  // Use Turbopack (default in Next.js 16)
-  turbopack: {},
-  
-  // Experimental features for better performance
-  experimental: {
-    optimizePackageImports: ['lucide-react', '@radix-ui/react-*'],
-    scrollRestoration: true,
-    optimizeCss: true,
-  },
 
   // Headers for caching
   async headers() {
