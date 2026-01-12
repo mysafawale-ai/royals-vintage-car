@@ -1,8 +1,7 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Play } from "lucide-react"
-import { generateVideoThumbnail } from "@/lib/video-thumbnail"
 
 const galleryItems = [
   // Photos
@@ -12,46 +11,21 @@ const galleryItems = [
   { id: 4, type: "image", src: "/classic-vintage-car-rental-4.jpg", thumbnail: "/classic-vintage-car-rental-4.jpg", title: "Classic Vintage Car Rental" },
   { id: 5, type: "image", src: "/bride-entry-vintage-car-5.jpg", thumbnail: "/bride-entry-vintage-car-5.jpg", title: "Bride Entry Vintage Car" },
   { id: 6, type: "image", src: "/wedding-baraat-vintage-car-6.jpg", thumbnail: "/wedding-baraat-vintage-car-6.jpg", title: "Wedding Baraat Vintage Car" },
-  // Videos - thumbnails will be generated from videos
-  { id: 7, type: "video", src: "/vintage-rolls-royce-wedding-car-video-1.mp4", thumbnail: null, title: "Vintage Rolls Royce Wedding Car Video" },
-  { id: 8, type: "video", src: "/classic-open-top-vintage-wedding-video-2.mp4", thumbnail: null, title: "Classic Open Top Vintage Video" },
-  { id: 9, type: "video", src: "/vintage-baraat-car-wedding-video-3.mp4", thumbnail: null, title: "Royal Baraat Car Video" },
-  { id: 10, type: "video", src: "/luxury-vintage-wedding-car-decoration-4.mp4", thumbnail: null, title: "Decorated Wedding Vintage Video" },
-  { id: 11, type: "video", src: "/wedding-vintage-car-rental-video-5.mp4", thumbnail: null, title: "Bride & Groom Car Video" },
-  { id: 12, type: "video", src: "/elegant-vintage-wedding-car-ride-video.mp4", thumbnail: null, title: "Elegant Wedding Car Ride Video" },
+  // Videos - using static thumbnail images
+  { id: 7, type: "video", src: "/vintage-rolls-royce-wedding-car-video-1.mp4", thumbnail: "/elegant-vintage-wedding-car-7.jpg", title: "Vintage Rolls Royce Wedding Car Video" },
+  { id: 8, type: "video", src: "/classic-open-top-vintage-wedding-video-2.mp4", thumbnail: "/classic-car-wedding-decoration.jpg", title: "Classic Open Top Vintage Video" },
+  { id: 9, type: "video", src: "/vintage-baraat-car-wedding-video-3.mp4", thumbnail: "/wedding-baraat-vintage-car-6.jpg", title: "Royal Baraat Car Video" },
+  { id: 10, type: "video", src: "/luxury-vintage-wedding-car-decoration-4.mp4", thumbnail: "/luxury-vintage-car-hire-wedding-8.jpg", title: "Decorated Wedding Vintage Video" },
+  { id: 11, type: "video", src: "/wedding-vintage-car-rental-video-5.mp4", thumbnail: "/bride-entry-vintage-car-5.jpg", title: "Bride & Groom Car Video" },
+  { id: 12, type: "video", src: "/elegant-vintage-wedding-car-ride-video.mp4", thumbnail: "/elegant-vintage-wedding-car-7.jpg", title: "Elegant Wedding Car Ride Video" },
 ]
 
 export function GallerySection() {
-  const [selectedFilter, setSelectedFilter] = useState<"all" | "video">("all")
   const [showAll, setShowAll] = useState(false)
   const [activeVideo, setActiveVideo] = useState<string | null>(null)
   const [activeImage, setActiveImage] = useState<{type: string, src: string} | null>(null)
-  const [thumbnails, setThumbnails] = useState<Record<string, string>>({})
 
-  // Video to thumbnail mapping
-  const videoThumbnails: Record<string, string> = {
-    "/elegant-vintage-wedding-car-ride-video.mp4": "/elegant-vintage-wedding-car-7.jpg",
-    "/classic-car-wedding-celebration-video.mp4": "/classic-car-wedding-decoration.jpg",
-    "/vintage-wedding-car-grandeur-video.mp4": "/premium-vintage-car-wedding-12.jpg",
-    "/luxury-vintage-wedding-car-decoration-4.mp4": "/luxury-vintage-car-hire-wedding-8.jpg",
-    "/luxury-vintage-wedding-decoration-video.mp4": "/luxury-vintage-car-celebration.jpg",
-    "/premium-vintage-car-experience-video.mp4": "/premium-vintage-car-hire-wedding.jpg",
-  }
-
-  // Generate thumbnails for videos on component mount
-  useEffect(() => {
-    const newThumbnails: Record<string, string> = {}
-    
-    for (const [videoUrl, imageUrl] of Object.entries(videoThumbnails)) {
-      newThumbnails[videoUrl] = imageUrl
-    }
-
-    setThumbnails(newThumbnails)
-  }, [])
-
-  const filteredItems = galleryItems
-  
-  const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 12)
+  const displayedItems = showAll ? galleryItems : galleryItems.slice(0, 12)
 
   return (
     <section id="gallery" className="py-20 md:py-32 bg-background">
@@ -68,21 +42,11 @@ export function GallerySection() {
 
         {/* Filter Tabs */}
         <div className="flex justify-center gap-4 mb-8">
-          {[
-            { key: "all", label: "All Videos" },
-          ].map((filter) => (
-            <button
-              key={filter.key}
-              onClick={() => setSelectedFilter(filter.key as "all" | "video")}
-              className={`px-6 py-2 rounded-full font-mono text-sm transition-all ${
-                selectedFilter === filter.key
-                  ? "bg-secondary text-white"
-                  : "bg-primary/10 text-primary hover:bg-primary/20"
-              }`}
-            >
-              {filter.label}
-            </button>
-          ))}
+          <button
+            className="px-6 py-2 rounded-full font-mono text-sm transition-all bg-secondary text-white"
+          >
+            Gallery
+          </button>
         </div>
 
         {/* Gallery Grid */}
@@ -103,12 +67,14 @@ export function GallerySection() {
                 <img
                   src={item.src}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               ) : (
                 <img
-                  src={thumbnails[item.src] || item.thumbnail || item.src}
+                  src={item.thumbnail}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               )}
