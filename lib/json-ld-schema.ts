@@ -72,10 +72,18 @@ export function generateOrganizationSchema() {
     ],
     priceRange: '₹₹₹',
     foundingDate: '2020',
-    ratingValue: '4.9',
-    ratingCount: '250',
-    bestRating: '5',
-    worstRating: '1',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      itemReviewed: {
+        '@type': 'LocalBusiness',
+        name: 'ROYALS - THE BARODE VINTAGE CARS',
+        url: 'https://royalsvintagecars.com',
+      },
+      ratingValue: '4.9',
+      ratingCount: '250',
+      bestRating: '5',
+      worstRating: '1',
+    },
   }
 }
 
@@ -106,6 +114,10 @@ export function generateServiceSchema(
     priceRange: '₹₹₹',
     aggregateRating: {
       '@type': 'AggregateRating',
+      itemReviewed: {
+        '@type': 'Service',
+        name: serviceName,
+      },
       ratingValue: '4.9',
       ratingCount: '250',
       bestRating: '5',
@@ -197,6 +209,11 @@ export function generateLocalBusinessSchema() {
     priceRange: '₹₹₹',
     aggregateRating: {
       '@type': 'AggregateRating',
+      itemReviewed: {
+        '@type': 'LocalBusiness',
+        name: 'ROYALS - THE BARODE VINTAGE CARS',
+        url: 'https://royalsvintagecars.com',
+      },
       ratingValue: '4.9',
       ratingCount: '250',
       bestRating: '5',
@@ -268,8 +285,14 @@ export function generateProductSchema(
     },
     aggregateRating: {
       '@type': 'AggregateRating',
+      itemReviewed: {
+        '@type': 'Product',
+        name: name,
+      },
       ratingValue: '4.9',
       ratingCount: '250',
+      bestRating: '5',
+      worstRating: '1',
     },
   }
 }

@@ -178,6 +178,11 @@ export default function RootLayout({
       {
         "@type": "AggregateRating",
         "@id": "https://royalsvintagecars.com/#rating",
+        itemReviewed: {
+          "@type": "LocalBusiness",
+          name: "ROYALS - THE BARODE VINTAGE CARS",
+          url: "https://royalsvintagecars.com",
+        },
         ratingValue: "4.9",
         ratingCount: "250",
         bestRating: "5",
