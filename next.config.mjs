@@ -14,13 +14,10 @@ const nextConfig = {
         hostname: '**',
       },
     ],
-    quality: 80,
   },
   compress: true,
-  swcMinify: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
-  optimizeFonts: true,
   reactStrictMode: true,
   
   // Optimizations for bundle size
@@ -40,7 +37,6 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', '@radix-ui/react-*'],
     scrollRestoration: true,
     optimizeCss: true,
-    after: true,
   },
 
   // Headers for caching
