@@ -28,25 +28,25 @@ export function GallerySection() {
   const [activeImage, setActiveImage] = useState<{type: string, src: string} | null>(null)
   const [thumbnails, setThumbnails] = useState<Record<string, string>>({})
 
+  // Video to thumbnail mapping
+  const videoThumbnails: Record<string, string> = {
+    "/elegant-vintage-wedding-car-ride-video.mp4": "/elegant-vintage-wedding-car-7.jpg",
+    "/classic-car-wedding-celebration-video.mp4": "/classic-car-wedding-decoration.jpg",
+    "/vintage-wedding-car-grandeur-video.mp4": "/premium-vintage-car-wedding-12.jpg",
+    "/luxury-vintage-wedding-car-decoration-4.mp4": "/luxury-vintage-car-hire-wedding-8.jpg",
+    "/luxury-vintage-wedding-decoration-video.mp4": "/luxury-vintage-car-celebration.jpg",
+    "/premium-vintage-car-experience-video.mp4": "/premium-vintage-car-hire-wedding.jpg",
+  }
+
   // Generate thumbnails for videos on component mount
   useEffect(() => {
-    const generateThumbnails = async () => {
-      const videoItems = galleryItems.filter(item => item.type === "video")
-      const newThumbnails: Record<string, string> = {}
-
-      for (const item of videoItems) {
-        try {
-          const thumb = await generateVideoThumbnail(item.src, 2)
-          newThumbnails[item.src] = thumb
-        } catch (error) {
-          console.error(`Failed to generate thumbnail for ${item.src}:`, error)
-        }
-      }
-
-      setThumbnails(newThumbnails)
+    const newThumbnails: Record<string, string> = {}
+    
+    for (const [videoUrl, imageUrl] of Object.entries(videoThumbnails)) {
+      newThumbnails[videoUrl] = imageUrl
     }
 
-    generateThumbnails()
+    setThumbnails(newThumbnails)
   }, [])
 
   const filteredItems = galleryItems
