@@ -7,6 +7,7 @@ import { Phone, Crown, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { addLead } from "@/lib/leads"
+import { SiteFooter } from "@/components/site-footer"
 
 // Gujarat cities and areas for the dropdown
 const gujaratLocations = {
@@ -107,7 +108,7 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
         </div>
       </div>
 
-      <section className="relative w-full min-h-[90vh] overflow-hidden pt-28 sm:pt-32 md:pt-28">
+      <section className="relative w-full min-h-[90vh] overflow-hidden pt-20 sm:pt-32 md:pt-28">
       {/* Background Image */}
       <div
         className="absolute inset-0 transition-opacity duration-1000"
@@ -255,6 +256,7 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
         ))}
       </div>
     </section>
+    <SiteFooter />
     </>
   )
 }

@@ -101,7 +101,7 @@ export function KeywordPageLayout({
       </div>
 
       {/* Hero Section with Form */}
-      <section className="relative w-full min-h-[90vh] overflow-hidden pt-28 sm:pt-32 md:pt-28">
+      <section className="relative w-full min-h-[90vh] overflow-hidden pt-20 sm:pt-32 md:pt-28">
         <div className="absolute inset-0 transition-opacity duration-1000" style={{ backgroundImage: `url(${heroImages[currentImage]})`, backgroundSize: "cover", backgroundPosition: "center" }}>
           <div className="absolute inset-0 bg-gradient-to-r from-[#2C1810]/95 via-[#8B4513]/60 to-[#2C1810]/40" />
         </div>
@@ -271,16 +271,6 @@ export function KeywordPageLayout({
             {relatedLinks.map((link, index) => (
               <Link key={index} href={link.href} className="text-primary hover:text-secondary font-mono text-sm underline">{link.label}</Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Info */}
-      <section className="py-8 bg-background border-t">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center items-center gap-6 text-sm font-mono text-muted-foreground">
-            <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-secondary" /><span>25,26, Windsor Plaza, RC Dutt Rd, Alkapuri, Vadodara 390007</span></div>
-            <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-secondary" /><a href="tel:+918830612287" className="hover:text-secondary">+91 88306 12287</a></div>
           </div>
         </div>
       </section>
