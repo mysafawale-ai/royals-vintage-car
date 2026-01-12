@@ -197,6 +197,16 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta httpEquiv="Cache-Control" content="public, max-age=31536000, immutable" />
+        
+        {/* Web App Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        
+        {/* PWA & Branding */}
+        <meta name="theme-color" content="#2C1810" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="ROYALS Vintage Cars" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -1,0 +1,64 @@
+{
+  "name": "ROYALS - THE BARODE VINTAGE CARS",
+  "short_name": "ROYALS Vintage Cars",
+  "description": "Premium vintage car rental for weddings in Vadodara, Ahmedabad, Surat & Gujarat",
+  "start_url": "https://royalsvintagecars.com",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#2C1810",
+  "background_color": "#ffffff",
+  "categories": ["business", "automotive", "services"],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/og-image.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Vintage Car Rental",
+      "short_name": "Car Rental",
+      "description": "Book vintage cars for weddings",
+      "url": "https://royalsvintagecars.com/vintage-car-rental",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Wedding Car Services",
+      "short_name": "Wedding Cars",
+      "description": "Luxury wedding car services",
+      "url": "https://royalsvintagecars.com/wedding-car",
+      "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+    }
+  ],
+  "share_target": {
+    "action": "https://royalsvintagecars.com",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
