@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Playfair_Display, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
+import { JsonLdSchema } from "@/components/json-ld-schema"
 import "./globals.css"
 
 const playfairDisplay = Playfair_Display({
@@ -207,6 +208,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="ROYALS Vintage Cars" />
         
+        {/* JSON-LD Structured Data */}
+        <JsonLdSchema />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
