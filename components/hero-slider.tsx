@@ -125,7 +125,7 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
             <div className="container mx-auto px-3 sm:px-4 py-4 md:py-0">
               <div className="grid md:grid-cols-5 gap-3 md:gap-6 items-start">
                 {/* Left Side - Text Content */}
-                <div className="md:col-span-3 max-w-2xl space-y-3 sm:space-y-4 md:space-y-6 pt-16 sm:pt-20 md:pt-24">
+                <div className="md:col-span-3 max-w-2xl space-y-3 sm:space-y-4 md:space-y-6 pt-28 sm:pt-20 md:pt-24">
                   <div className="flex items-center gap-2 text-secondary">
                     <Crown className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                     <span className="text-xs font-mono uppercase tracking-wider">{slide.subtitle}</span>
