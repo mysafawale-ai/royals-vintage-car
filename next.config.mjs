@@ -20,17 +20,8 @@ const nextConfig = {
   productionBrowserSourceMaps: false,
   reactStrictMode: true,
   
-  // Optimizations for bundle size
-  webpack: (config, { isServer }) => {
-    config.optimization = {
-      ...config.optimization,
-      usedExports: true,
-      sideEffects: false,
-      minimize: true,
-    }
-    config.mode = 'production'
-    return config
-  },
+  // Use Turbopack (default in Next.js 16)
+  turbopack: {},
   
   // Experimental features for better performance
   experimental: {
