@@ -7,6 +7,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { addLead } from "@/lib/leads"
+import { SiteFooter } from "@/components/site-footer"
 
 // Gujarat cities and areas
 const gujaratLocations = {
@@ -283,6 +284,8 @@ export function KeywordPageLayout({
           </div>
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   )
 }

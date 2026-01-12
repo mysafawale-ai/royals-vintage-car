@@ -12,36 +12,58 @@ export async function generateVideoThumbnail(
     const video = document.createElement("video")
     video.src = videoUrl
     video.crossOrigin = "anonymous"
+    video.preload = "metadata"
+    
+    let timeoutId: NodeJS.Timeout
+    
+    const cleanup = () => {
+      clearTimeout(timeoutId)
+      video.pause()
+      video.src = ""
+      video.remove()
+    }
     
     video.onloadedmetadata = () => {
-      video.currentTime = Math.min(time, video.duration - 0.5)
+      try {
+        video.currentTime = Math.min(time, Math.max(0, video.duration - 1))
+      } catch (error) {
+        console.error("Error setting currentTime:", error)
+      }
     }
     
     video.onseeked = () => {
-      const canvas = document.createElement("canvas")
-      canvas.width = video.videoWidth
-      canvas.height = video.videoHeight
-      
-      const ctx = canvas.getContext("2d")
-      if (!ctx) {
-        reject(new Error("Could not get canvas context"))
-        return
-      }
-      
-      ctx.drawImage(video, 0, 0)
-      
       try {
+        const canvas = document.createElement("canvas")
+        canvas.width = video.videoWidth || 320
+        canvas.height = video.videoHeight || 240
+        
+        const ctx = canvas.getContext("2d")
+        if (!ctx) {
+          reject(new Error("Could not get canvas context"))
+          cleanup()
+          return
+        }
+        
+        ctx.drawImage(video, 0, 0)
+        
         const thumbnail = canvas.toDataURL("image/jpeg", 0.8)
+        cleanup()
         resolve(thumbnail)
       } catch (error) {
+        cleanup()
         reject(error)
-      } finally {
-        video.remove()
       }
     }
     
     video.onerror = () => {
+      cleanup()
       reject(new Error(`Failed to load video: ${videoUrl}`))
     }
+    
+    // Timeout after 5 seconds
+    timeoutId = setTimeout(() => {
+      cleanup()
+      reject(new Error(`Video thumbnail generation timeout: ${videoUrl}`))
+    }, 5000)
   })
 }

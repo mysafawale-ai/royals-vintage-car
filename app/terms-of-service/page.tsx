@@ -1,5 +1,4 @@
 import { SiteFooter } from "@/components/site-footer"
-import { Navigation } from "@/components/navigation"
 
 export const metadata = {
   title: "Terms of Service | Vintage Wedding Car Rental",
@@ -9,9 +8,7 @@ export const metadata = {
 export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      
-      <main className="container mx-auto px-4 py-12 md:py-20 max-w-4xl">
+      <main className="container mx-auto px-4 py-12 md:py-20 max-w-4xl mt-20">
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">Terms of Service</h1>
           <p className="text-muted-foreground">Last updated: January 2026</p>

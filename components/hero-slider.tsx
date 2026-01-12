@@ -107,7 +107,7 @@ _Sent via ROYALS - THE BARODE VINTAGE CARS Website_
   }
 
   return (
-    <section id="home" className="relative w-full min-h-screen md:h-screen sm:h-[600px] xs:h-screen overflow-hidden pt-56 sm:pt-64 md:pt-56">
+    <section id="home" className="relative w-full min-h-screen md:h-screen sm:h-[600px] xs:h-screen overflow-hidden pt-80 sm:pt-88 md:pt-80">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
