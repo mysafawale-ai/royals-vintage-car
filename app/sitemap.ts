@@ -1,93 +1,123 @@
-/**
- * Sitemap generation for Next.js
- * This generates XML sitemaps for search engines
- * 
- * Generates three sitemaps:
- * - sitemap.xml - Main pages (home, privacy, terms, leads)
- * - sitemap-area-pages.xml - All city/area pages (99 pages)
- * - sitemap-service-pages.xml - All service pages
- */
+import { MetadataRoute } from "next";
+import fs from "fs";
+import path from "path";
+import { SEO_CONFIG } from "@/lib/seo-config";
 
-import { allRoutes } from '@/lib/all-routes'
+function getAllRoutes(): string[] {
+  const appDir = path.join(process.cwd(), "app");
+  if (!fs.existsSync(appDir)) return ["/"];
 
-export default function sitemap() {
-  const baseUrl = 'https://royalsvintagecars.com'
+  const routes: string[] = ["/"];
+  const ignoreDirs = new Set([
+    "api",
+    "_components",
+    "_lib",
+    "admin",
+    "node_modules",
+  ]);
+  const ignoreFiles = new Set([
+    "layout.tsx",
+    "layout.js",
+    "loading.tsx",
+    "loading.js",
+    "error.tsx",
+    "error.js",
+    "not-found.tsx",
+    "not-found.js",
+    "globals.css",
+    "global.css",
+    "sitemap.ts",
+    "sitemap.xml",
+    "robots.ts",
+    "robots.txt",
+    "manifest.ts",
+    "manifest.json",
+    "opengraph-image.tsx",
+    "opengraph-image.png",
+    "apple-icon.svg",
+    "icon.svg",
+    "favicon.ico",
+  ]);
 
-  // Main pages with higher priority
-  const mainPages = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/terms-of-service`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-  ]
+  function scanDir(dir: string, basePath: string) {
+    let entries: fs.Dirent[];
+    try {
+      entries = fs.readdirSync(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
 
-  // Service pages - high priority for SEO
-  const servicePages = [
-    'vintage-car-rental',
-    'wedding-car',
-    'rolls-royce-wedding',
-    'baraat-car',
-    'bride-entry-car',
-    'groom-entry-car',
-    'vintage-wedding-car',
-    'classic-car-wedding',
-    'open-top-vintage-car',
-    'luxury-vintage-car',
-    'marriage-car-rental',
-    'antique-car-wedding',
-    'doli-car',
-    'dulhan-car',
-    'vidaai-car',
-    'reception-car',
-    'pre-wedding-shoot-car',
-    'vintage-car-photoshoot',
-    'vintage-car-rental-vadodara',
-    'wedding-vintage-car-on-rent',
-    'wedding-vintage-car-rental-service',
-    'wedding-vintage-cars-delivery',
-    'vintage-wedding-car-hire',
-    'vintage-wedding-car-rental',
-    'vintage-wedding-car-service',
-    'shaadi-car',
-    'marriage-car-rental',
-    'vintage-car-for-wedding',
-  ]
+    for (const entry of entries) {
+      if (entry.name.startsWith(".") || entry.name.startsWith("_")) continue;
 
-  // Area pages - medium-high priority
-  const areaPages = allRoutes.filter(
-    route => !servicePages.includes(route) && route !== 'leads'
-  )
+      if (entry.isDirectory()) {
+        if (ignoreDirs.has(entry.name)) continue;
 
-  // Combine all pages
-  const allPages = [
-    ...mainPages,
-    ...servicePages.map(route => ({
-      url: `${baseUrl}/${route}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    })),
-    ...areaPages.map(route => ({
-      url: `${baseUrl}/${route}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    })),
-  ]
+        const dirPath = path.join(dir, entry.name);
+        const routePath = `${basePath}/${entry.name}`;
 
-  return allPages
+        // Check if this directory has a page file
+        const hasPage =
+          fs.existsSync(path.join(dirPath, "page.tsx")) ||
+          fs.existsSync(path.join(dirPath, "page.js")) ||
+          fs.existsSync(path.join(dirPath, "page.jsx")) ||
+          fs.existsSync(path.join(dirPath, "page.mdx"));
+
+        if (hasPage) {
+          // Skip dynamic route folders like [slug], [city] etc.
+          if (!entry.name.startsWith("[")) {
+            routes.push(routePath);
+          }
+        }
+
+        // Continue scanning subdirectories
+        scanDir(dirPath, routePath);
+      }
+    }
+  }
+
+  scanDir(appDir, "");
+  return [...new Set(routes)].sort();
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = SEO_CONFIG.siteUrl;
+  const allRoutes = getAllRoutes();
+  const lastModified = new Date();
+
+  // Define priority tiers
+  const highPriorityPaths = new Set(["/"]);
+  const mediumPriorityKeywords = [
+    "about",
+    "contact",
+    "services",
+    "service",
+  ];
+
+  return allRoutes.map((route) => {
+    let priority = 0.7;
+    let changeFrequency: "daily" | "weekly" | "monthly" = "weekly";
+
+    if (highPriorityPaths.has(route)) {
+      priority = 1.0;
+      changeFrequency = "daily";
+    } else if (
+      mediumPriorityKeywords.some((kw) =>
+        route.toLowerCase().includes(kw)
+      )
+    ) {
+      priority = 0.9;
+      changeFrequency = "weekly";
+    } else if (route.split("/").length <= 2) {
+      priority = 0.8;
+      changeFrequency = "weekly";
+    }
+
+    return {
+      url: `${baseUrl}${route}`,
+      lastModified,
+      changeFrequency,
+      priority,
+    };
+  });
 }
